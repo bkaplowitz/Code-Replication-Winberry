@@ -3,9 +3,11 @@
     //Load parameters //
 @#include "parameters_polynomials.mod"
     // Variable Definition //
+\\ loads variables stored here
 @# include "variables_polynomials.mod"
     // Model Equations //
 model; 
+    \\ loads equations stored here
     @include "equations_polynomials.mod"
 end;
     // Computation //
