@@ -9,7 +9,7 @@ polynomials = load('polynomials');
 parameters beta sigma aBar alpha delta N mu tau rhoTFP sigmaTFP
 // Load each of their values 
 @#define nEconomicParameters = 10
-for iParam = 1: @{nEconomicParameters}
+for iParam = 1 : @{nEconomicParameters}
     // removes any spaces from name and accesses the parameter names stored in appropriate area
     parameterName = deblank(M_.param_names(iParam,:));
     // returns true if parametername is attribute in the .mat file given.
@@ -22,8 +22,8 @@ end
 // Reconstructs the epsilon transition matrix
 // uses dynare loops 
 //initializes a 2 by 2 epsilon transition matrix by creating four seperate variables linked to each entry
-@#for iEpsilon in 1:2
-    @#for iEpsilonPrime in 1:2
+@#for iEpsilon in 1 : 2
+    @#for iEpsilonPrime in 1 : 2
         parameters epsilonTransition_@{iEpsilon}_@{iEpsilonPrime};
     @#endfor
 @#endfor

@@ -14,3 +14,4 @@
         # assetsPrime_@{iEpsilon}_@{iAssets} = max(w * (mu * (1 - epsilonGrid_@{iEpsilon}) + (1 - tau) * epsilonGrid_@{iEpsilon}) 
         + (1 + r) * assetsGrid_@{iAssets} - (expectation_@{iEpsilon}_@{iAssets} ^ (-1 / sigma) ), aBar);
         // Compute future consumption c'
+        
