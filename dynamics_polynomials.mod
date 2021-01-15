@@ -4,19 +4,19 @@
 @#include "parameters_polynomials.mod"
     // Variable Definition //
 \\ loads variables stored here
-@# include "variables_polynomials.mod"
+@#include "variables_polynomials.mod"
     // Model Equations //
 model; 
     \\ loads equations stored here
-    @include "equations_polynomials.mod"
+    @#include "equations_polynomials.mod"
 end;
     // Computation //
 // Specify the shock process 
  shocks;
-    var aggregateTFPShock =1;
+    var aggregateTFPShock = 1;
  end;
 
- options_.steadystate.nocheck=1;
+ options_.steadystate.nocheck = 1;
  // Computes the steady state while avoiding checking for small numerical errors
 
     // Check regularity conditions (optional) //

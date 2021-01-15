@@ -4,14 +4,14 @@
     // Conditional Expectation coefficients //
 
 @#for iPower in 1 : nAssets
-    var expectationCoefficient_1_@{iPower} expectationCoefficient_2_@{iPower} 
+    var expectationCoefficient_1_@{iPower} expectationCoefficient_2_@{iPower};
 @#endfor 
 
     // Density of HH outside of BC //
 
 // Record each moment of distribution up to nMeasure
 @#for iMoment in 1:nMeasure 
-    var moment_1_@{iMoment} moment_2_@{iMoment} 
+    var moment_1_@{iMoment} moment_2_@{iMoment};
 @#endfor 
 
 // Parameters of the distribution

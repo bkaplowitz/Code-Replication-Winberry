@@ -6,7 +6,7 @@ grids = load('grids');
 polynomials = load('polynomials');
 
 // Define the economic parameters
-parameters beta sigma aBar alpha delta N mu tau rhoTFP sigmaTFP
+parameters beta sigma aBar alpha delta N mu tau rhoTFP sigmaTFP;
 // Load each of their values 
 @#define nEconomicParameters = 10
 for iParam = 1 : @{nEconomicParameters}
@@ -37,18 +37,18 @@ end
 
 // Mass of invariant distribution of the idiosyncratic shocks
 // Create the variables
-parameters epsilonMass_1 epsilonMass_2
-epsilonMass_1 = 1-N; 
+parameters epsilonMass_1 epsilonMass_2; 
+epsilonMass_1 = 1 - N; 
 epsilonMass_2 = N; 
 // Defines the set of approximation parameters 
-parameters nEpsilon nAssets nStates assetsMin assetsMax nAssetsFine nStatesFine nAssetsQuad nStatesQuad nMeasure nMeasureCoefficients kRepSS maxIterations tolerance dampening;
+parameters nEpsilon nAssets nState assetsMin assetsMax nAssetsFine nStatesFine nAssetsQuad nStatesQuad nMeasure nMeasureCoefficients kRepSS maxIterations tolerance dampening;
 // Load in the values for each of them
 @#define nApproximationParameters = 15
 // goes through and assigns values from .mat to each of the parameters defined. Need +6 because the first 6 used as counters will have to be defined manually below. Also, starts after first 10 already defined above.
 for iParam = 1: @{nApproximationParameters}
     parameterName = deblank(M_.param_names(@{nEconomicParameters} + 6 + iParam, :));
     if isfield(approximationParameters, parameterName)
-        M_.params(@{nEconomicParameters} + 6 + iParam) = eval(['approximationParameters.' parameterName])
+        M_.params(@{nEconomicParameters} + 6 + iParam) = eval(['approximationParameters.' parameterName]);
     end 
 end 
 @#define nCounter = nEconomicParameters + 6 + nApproximationParameters
@@ -77,7 +77,7 @@ epsilonGrid_2 = 1;
 // Assets 
 //define a new variable for each vector point subscripted by entry
 @#for iAssets in 1:nAssets
-    parameters assetsGrid_@{iAssets}
+    parameters assetsGrid_@{iAssets};
 @#endfor 
 // Assign values (in same order that the parameters were declared hence why adjusting the counter)
 for iAssets = 1 : @{nAssets}
@@ -90,11 +90,6 @@ end
     // Quad Grid and Weights // 
 
 // Define parameters 
-@#for iAssets in 1:nAssetsQuad
-    parameters quadGrid_@{iAssets};
-@#endfor
-
-// Assign values (in same order that parameters were declared hence why adjusting the counter)
 @#for iAssets in 1 : nAssetsQuad
     parameters quadGrid_@{iAssets};
     parameters quadWeights_@{iAssets};
@@ -149,7 +144,7 @@ end
 // Define params
 @#for iAssets in 1 : nAssetsQuad
     @#for iPower in 1: nAssets 
-        parameters quadPoly_@{iAssets}_@{iPower}
+        parameters quadPoly_@{iAssets}_@{iPower};
     @#endfor 
 @#endfor 
 
