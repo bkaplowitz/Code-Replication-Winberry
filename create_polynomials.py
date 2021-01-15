@@ -38,9 +38,9 @@ def compute_chebyshev(power, grid):
     n_grid = np.shape(grid)[0]
     # generating series for cheby of first type
     cheby = np.ones((n_grid, power))
-    cheby[:, 1] = grid.flatten()
+    cheby[:, 1:2] = grid
     for n_power in range(2, power):
-        cheby[:, n_power] = (
-            2 * np.multiply(grid.flatten(), cheby[:, n_power - 1]) - cheby[:, n_power - 2]
+        cheby[:, n_power:n_power+1] = (
+            2 * np.multiply(grid, cheby[:, (n_power - 1):n_power]) - cheby[:, (n_power - 2):(n_power-1)]
         )
     return cheby

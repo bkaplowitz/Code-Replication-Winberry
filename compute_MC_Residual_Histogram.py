@@ -239,7 +239,7 @@ def update_coefs_poly(
     # computes cond_expec, under assumed form of exp(sum coefs_i cheby_poly_i). Expectation transform used to make positive... but may not be minimax optimal anymore?
     cond_expec = np.exp(coefs @ assets_poly.T)
 
-    # compute optimal savings rule
+    # compute optimal savings rule from FOC+ budget constraint
     assets_prime_opt = (
         w * (mu * (1 - epsilon_grid) + (1 - tau) * epsilon_grid)
         + (1 + r) * assets_grid

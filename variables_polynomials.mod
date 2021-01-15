@@ -28,7 +28,7 @@ var mHat_1 mHat_2;
 var r w;
     // Aggregate TFP //
 
-var AggregateTFP;
+var aggregateTFP;
 
     // Auxiliary variables we want to know // 
     

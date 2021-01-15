@@ -6,8 +6,8 @@
 \\ loads variables stored here
 @#include "variables_polynomials.mod"
     // Model Equations //
+ \\ loads equations stored here
 model; 
-    \\ loads equations stored here
     @#include "equations_polynomials.mod"
 end;
     // Computation //

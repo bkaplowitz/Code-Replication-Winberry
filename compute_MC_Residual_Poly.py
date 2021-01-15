@@ -56,14 +56,14 @@ def compute_MC_residual_poly(
 
     # approximate cond expectation function
 
-    # initial coefs using rule of thumb savings
+    # initial coefs using rule of thumb savings-- assumes dV'(a')=a' and then FOC. Log used in exp transform in update coefficients to ensure it is positive. Assumes marginal value next period is linear in savings.  From FOC can be seen as FOC consuming annuity value of capital and keeping stock constant.
     init_opt_asset_grid = np.log(
         beta
         * (1 + r)
         * (w * (mu * (1 - epsilon_grid) + (1 - tau) * epsilon_grid) + r * assets_grid)
         ** (-sigma)
     )
-    # fit/find coefs using chebyshev interpolation trick
+    # fit/find coefs using chebyshev interpolation trick, simplified form of projection
     # also uses trick from i:i+1 to return 1xn vec
     coefs_mat = np.zeros((n_epsilon, n_assets))
     for i in np.arange(0, n_epsilon):

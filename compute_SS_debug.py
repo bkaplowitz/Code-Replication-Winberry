@@ -152,7 +152,7 @@ def main():
     # gets histogram_matrix 
     hist_mat=return_val[1]
 
-
+    assets_grid_quad = assets_grid_quad.flatten()
     moments_hist, grid_moments, constrained = compute_moments.compute_moments_hist(hist_mat, n_epsilon,
     n_measure,
     n_assets_quad,
@@ -231,7 +231,82 @@ def main():
     damp,
     tol,
     max_iter)
-    
+
+    _, params_est,moments_est, constrained_est,   = compute_MC_Residual_Poly.compute_MC_residual_poly(k_ss, moments_hist,
+    grid_moments,
+    constrained,
+    epsilon_mat_grid,
+    epsilon_grid_mat_quad,
+    epsilon_grid_prime,
+    epsilon_transition_mat,
+    assets_mat_grid,
+    N,
+    n_epsilon,
+    n_assets,
+    n_assets_quad,
+    n_states,
+    n_measure,
+    assets_min,
+    assets_max,
+    assets_poly,
+    assets_poly_BC,
+    assets_poly_sq,
+    assets_poly_quad,
+    assets_grid_quad,
+    epsilon_invariant,
+    quad_weights_vec,
+    a_bar,
+    alpha,
+    beta,
+    delta,
+    mu,
+    sigma,
+    tau,
+    damp,
+    tol,
+    max_iter)
+
+    _,hist_mat, assets_prime, consumption = compute_MC_Residual_Histogram.compute_MC_Residual_Histogram(k_ss,alpha,
+    N,
+    delta,
+    beta,
+    sigma,
+    epsilon_mat_grid,
+    assets_mat_grid,
+    assets_poly,
+    mu,
+    tau,
+    n_epsilon,
+    n_assets,
+    n_states,
+    n_assets_fine,
+    n_states_fine,
+    assets_poly_sq,
+    assets_poly_fine,
+    assets_grid_fine,
+    epsilon_mat_grid_fine,
+    epsilon_grid_prime,
+    epsilon_transition_mat,
+    tol,
+    max_iter,
+    damp,
+    a_bar,
+    assets_min,
+    assets_max, assets_grid_fine)
+    # compute density among grid
+    density_fine = np.zeros((n_epsilon,n_assets_fine))
+    for i_epsilon in np.arange(0,n_epsilon):
+        # compute first moment
+        grid_moments_fine = np.zeros((n_assets_fine,n_measure))
+        grid_moments_fine[:,0] = assets_grid_fine - moments_est[i_epsilon,0]
+
+        # higher order moments (centered)
+        for i_moments in np.arange(1, n_measure):
+            grid_moments_fine[:,i_moments] = (assets_grid_fine.ravel()  - moments_est[i_epsilon,0])**(i_moments+1) -  moments_est[i_epsilon,i_moments]
+            #compute  density away from the borrowing constraint
+            density_fine[i_epsilon,:] = params_est[i_epsilon,0]*(np.exp(grid_moments_fine@params_est[i_epsilon:i_epsilon+1,1:n_measure+1].T)).flatten()
+
+        
 
 if __name__ == "__main__":
     main()

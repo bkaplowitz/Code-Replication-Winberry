@@ -35,9 +35,9 @@ def compute_moments_hist(
                         np.power(
                             (assets_grid_fine - moments_hist[i_epsilon, 0]), i_moment+1
                         ),
-                        histogram_mat[i_epsilon:i_epsilon+1, :]
+                        histogram_mat[i_epsilon, :]
                     )
-                    / (np.sum(histogram_mat[i_epsilon:i_epsilon+1, :],1)),1
+                    / (np.sum(histogram_mat[i_epsilon, :],1)),1
                 )
                 - moments_hist[i_epsilon, i_moment]
             )
