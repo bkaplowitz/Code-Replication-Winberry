@@ -3,10 +3,10 @@
     //Load parameters //
 @#include "parameters_polynomials.mod"
     // Variable Definition //
-\\ loads variables stored here
+// loads variables stored here
 @#include "variables_polynomials.mod"
     // Model Equations //
- \\ loads equations stored here
+ // loads equations stored here
 model; 
     @#include "equations_polynomials.mod"
 end;

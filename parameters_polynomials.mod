@@ -13,10 +13,11 @@ for iParam = 1 : @{nEconomicParameters}
     // removes any spaces from name and accesses the parameter names stored in appropriate area
     parameterName = deblank(M_.param_names(iParam,:));
     // returns true if parametername is attribute in the .mat file given.
-    if isfield(economicParameters,parameterName)
-        // records the first parameter named as the object contained in the relevant .mat file
-        M_.params(iParam) = eval(['economicParameters.' parameterName])
-    end
+    // records the first parameter named as the object contained in the relevant .mat file
+
+    //if isfield(economicParameters,parameterName)
+    M_.params(iParam) = eval(['economicParameters.' parameterName]);
+   // end
 end 
 
 // Reconstructs the epsilon transition matrix
@@ -28,10 +29,10 @@ end
     @#endfor
 @#endfor
 // assigns entries to 2x2 matrix from data 
-for iEpsilon = 1:2
-    for iEpsilonPrime = 1:2
-        #unrolls and accesses the right entries from the parameter matrix and assigns to each of the 4 created variables
-        M_.params(@{nEconomicParameters} + 2*(iEpsilon-1)+i_EpsilonPrime) = economicParameters.matEpsilonTransition(iEpsilon,iEpsilonPrime)
+// unrolls and accesses the right entries from the parameter matrix and assigns to each of the 4 created variables
+for iEpsilon = 1 : 2
+    for iEpsilonPrime = 1 : 2
+        M_.params(@{nEconomicParameters} + 2 * (iEpsilon-1) +iEpsilonPrime) = economicParameters.matEpsilonTransition(iEpsilon,iEpsilonPrime);
     end
 end
 
@@ -41,25 +42,25 @@ parameters epsilonMass_1 epsilonMass_2;
 epsilonMass_1 = 1 - N; 
 epsilonMass_2 = N; 
 // Defines the set of approximation parameters 
-parameters nEpsilon nAssets nState assetsMin assetsMax nAssetsFine nStatesFine nAssetsQuad nStatesQuad nMeasure nMeasureCoefficients kRepSS maxIterations tolerance dampening;
+parameters nEpsilon nAssets nState assetsMin assetsMax nAssetsFine nStateFine nAssetsQuad nStateQuad nMeasure nMeasureCoefficients kRepSS maxIterations tolerance dampening;
 // Load in the values for each of them
 @#define nApproximationParameters = 15
 // goes through and assigns values from .mat to each of the parameters defined. Need +6 because the first 6 used as counters will have to be defined manually below. Also, starts after first 10 already defined above.
 for iParam = 1: @{nApproximationParameters}
-    parameterName = deblank(M_.param_names(@{nEconomicParameters} + 6 + iParam, :));
-    if isfield(approximationParameters, parameterName)
-        M_.params(@{nEconomicParameters} + 6 + iParam) = eval(['approximationParameters.' parameterName]);
-    end 
+    parameterName = deblank(M_.param_names(@{nEconomicParameters} + 6 + iParam,:));
+    //if isfield(approximationParameters, parameterName)
+    M_.params(@{nEconomicParameters} + 6 + iParam) = eval(['approximationParameters.' parameterName]);
+    //end 
 end 
 @#define nCounter = nEconomicParameters + 6 + nApproximationParameters
 
 // need to explicitly tell dynare each of the right values of lengths (no len() functionality built in)
 @#define nEpsilon = 2
 @#define nAssets = 25
-@#define nMeasure =3
+@#define nMeasure = 3
 @#define nAssetsQuad = 8
-@#define nStates = nEpsilon * nAssets
-@#define nStates = nEpsilon * nAssetsQuad
+@#define nState = nEpsilon * nAssets
+@#define nStateQuad = nEpsilon * nAssetsQuad
 
     // Grids for approximating conditional expectation //
 
@@ -75,8 +76,9 @@ epsilonGrid_2 = 1;
 @#define nCounter = nCounter + 2 
 
 // Assets 
+
 //define a new variable for each vector point subscripted by entry
-@#for iAssets in 1:nAssets
+@#for iAssets in 1 : nAssets
     parameters assetsGrid_@{iAssets};
 @#endfor 
 // Assign values (in same order that the parameters were declared hence why adjusting the counter)
@@ -96,7 +98,7 @@ end
 @#endfor 
 
 // Assign values 
-for iAssets = 1: @{nAssetsQuad}
+for iAssets = 1 : @{nAssetsQuad}
     M_.params(@{nCounter} +2 * (iAssets - 1) + 1) = grids.vecAssetsGridQuad(iAssets);
     M_.params(@{nCounter} + 2* (iAssets - 1) + 2) = grids.vecQuadWeights(iAssets);
 end
@@ -156,6 +158,7 @@ for iAssets = 1 : @{nAssetsQuad}
 end
 
 // update counter for future assignments
+
 @#define nCounter = nCounter + nAssetsQuad * nAssets 
 
     // Borrowing constraint poly //

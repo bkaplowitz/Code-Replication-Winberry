@@ -310,15 +310,15 @@ M_.param_names_long = char(M_.param_names_long, 'assetsMax');
 M_.param_names = char(M_.param_names, 'nAssetsFine');
 M_.param_names_tex = char(M_.param_names_tex, 'nAssetsFine');
 M_.param_names_long = char(M_.param_names_long, 'nAssetsFine');
-M_.param_names = char(M_.param_names, 'nStatesFine');
-M_.param_names_tex = char(M_.param_names_tex, 'nStatesFine');
-M_.param_names_long = char(M_.param_names_long, 'nStatesFine');
+M_.param_names = char(M_.param_names, 'nStateFine');
+M_.param_names_tex = char(M_.param_names_tex, 'nStateFine');
+M_.param_names_long = char(M_.param_names_long, 'nStateFine');
 M_.param_names = char(M_.param_names, 'nAssetsQuad');
 M_.param_names_tex = char(M_.param_names_tex, 'nAssetsQuad');
 M_.param_names_long = char(M_.param_names_long, 'nAssetsQuad');
-M_.param_names = char(M_.param_names, 'nStatesQuad');
-M_.param_names_tex = char(M_.param_names_tex, 'nStatesQuad');
-M_.param_names_long = char(M_.param_names_long, 'nStatesQuad');
+M_.param_names = char(M_.param_names, 'nStateQuad');
+M_.param_names_tex = char(M_.param_names_tex, 'nStateQuad');
+M_.param_names_long = char(M_.param_names_long, 'nStateQuad');
 M_.param_names = char(M_.param_names, 'nMeasure');
 M_.param_names_tex = char(M_.param_names_tex, 'nMeasure');
 M_.param_names_long = char(M_.param_names_long, 'nMeasure');
@@ -3213,14 +3213,11 @@ grids = load('grids');
 polynomials = load('polynomials');
 for iParam = 1 : 10
 parameterName = deblank(M_.param_names(iParam,:));
-if isfield(economicParameters,parameterName)
-M_.params(iParam) = eval(['economicParameters.' parameterName])
-end
+M_.params(iParam) = eval(['economicParameters.' parameterName]);
 end 
-for iEpsilon = 1:2
-for iEpsilonPrime = 1:2
-#unrolls and accesses the right entries from the parameter matrix and assigns to each of the 4 created variables
-M_.params(10 + 2*(iEpsilon-1)+i_EpsilonPrime) = economicParameters.matEpsilonTransition(iEpsilon,iEpsilonPrime)
+for iEpsilon = 1 : 2
+for iEpsilonPrime = 1 : 2
+M_.params(10 + 2 * (iEpsilon-1) +iEpsilonPrime) = economicParameters.matEpsilonTransition(iEpsilon,iEpsilonPrime);
 end
 end
 M_.params( 15 ) = 1-M_.params(6);
@@ -3228,10 +3225,8 @@ epsilonMass_1 = M_.params( 15 );
 M_.params( 16 ) = M_.params(6);
 epsilonMass_2 = M_.params( 16 );
 for iParam = 1: 15
-parameterName = deblank(M_.param_names(10 + 6 + iParam, :));
-if isfield(approximationParameters, parameterName)
+parameterName = deblank(M_.param_names(10 + 6 + iParam,:));
 M_.params(10 + 6 + iParam) = eval(['approximationParameters.' parameterName]);
-end 
 end 
 M_.params( 32 ) = 0;
 epsilonGrid_1 = M_.params( 32 );
@@ -3240,7 +3235,7 @@ epsilonGrid_2 = M_.params( 33 );
 for iAssets = 1 : 25
 M_.params(33 + iAssets) = grids.vecAssetsGrid(iAssets);
 end
-for iAssets = 1: 8
+for iAssets = 1 : 8
 M_.params(58 +2 * (iAssets - 1) + 1) = grids.vecAssetsGridQuad(iAssets);
 M_.params(58 + 2* (iAssets - 1) + 2) = grids.vecQuadWeights(iAssets);
 end
@@ -3260,8 +3255,6 @@ end
 for iPower = 1 : 25
 M_.params(924 + iPower) = polynomials.vecAssetsPolyBC(iPower);
 end 
-\\ loads variables stored here
-\\ loads equations stored here
 %
 % SHOCKS instructions
 %

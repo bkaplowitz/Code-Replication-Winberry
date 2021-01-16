@@ -173,6 +173,7 @@
 // From law of iterated expectations, removing conditional on state of employment from mean
 
 # aggregateCapital = (1-N) * moment_1_1(-1) + N * moment_2_1(-1);
+
 r = exp(aggregateTFP) * alpha * (aggregateCapital ^ (alpha - 1)) * (N ^ (1-alpha)) - delta;
 w = exp(aggregateTFP) * (1-alpha) * (aggregateCapital ^ alpha) * (N ^ (-alpha));
 
