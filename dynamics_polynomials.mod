@@ -26,4 +26,5 @@ end;
  // model_info; 
 
     // Simulate //
- stoch_simul(order=1, hp_filter=100,irf=40) aggregateTFP logAggregateOutput logAggregateConsumption logAggregateInvestment logWage r;
+// can set order=1 or order =2 
+ stoch_simul(order=3, hp_filter=100,irf=40) aggregateTFP logAggregateOutput logAggregateConsumption logAggregateInvestment logWage r;

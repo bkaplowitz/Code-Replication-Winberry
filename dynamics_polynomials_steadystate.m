@@ -1,8 +1,8 @@
 function [ys, check] = dynamics_polynomials_steadystate(ys, exo)
 
-    % Computes stationary equilibrium of the model for Dynare; format is required
-    % to be called by Dynare (follows example of NK_baseline.mod in Dynare examples)
     %
+    %
+    % Modified version of the baseline dynare file by 
     % Thomas Winberry, July 26th, 2016
 
     tStart = tic;
