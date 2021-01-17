@@ -6,7 +6,7 @@ grids = load('grids');
 polynomials = load('polynomials');
 
 // Define the economic parameters
-parameters beta sigma aBar alpha delta N mu tau rhoTFP sigmaTFP;
+parameters beta sigma aBar aalpha delta N mu tau rhoTFP sigmaTFP;
 // Load each of their values 
 @#define nEconomicParameters = 10
 for iParam = 1 : @{nEconomicParameters}
@@ -15,9 +15,9 @@ for iParam = 1 : @{nEconomicParameters}
     // returns true if parametername is attribute in the .mat file given.
     // records the first parameter named as the object contained in the relevant .mat file
 
-    //if isfield(economicParameters,parameterName)
-    M_.params(iParam) = eval(['economicParameters.' parameterName]);
-   // end
+    if isfield(economicParameters,parameterName)
+        M_.params(iParam) = eval(['economicParameters.' parameterName]);
+    end
 end 
 
 // Reconstructs the epsilon transition matrix

@@ -134,7 +134,7 @@
 
     // Higher order moments (uncentered)
     @#for iMoment in 2 : nMeasure
-        moment_@{iEpsilon}_@{iMoment} = (0
+        moment_@{iEpsilonPrime}_@{iMoment} = (0
         @#for iEpsilon in 1 : nEpsilon
             + ((1- mHat_@{iEpsilon}(-1)) * epsilonMass_@{iEpsilon} * epsilonTransition_@{iEpsilon}_@{iEpsilonPrime} *(0
             @#for iAssets in 1 : nAssetsQuad
@@ -174,8 +174,8 @@
 
 # aggregateCapital = (1-N) * moment_1_1(-1) + N * moment_2_1(-1);
 
-r = exp(aggregateTFP) * alpha * (aggregateCapital ^ (alpha - 1)) * (N ^ (1-alpha)) - delta;
-w = exp(aggregateTFP) * (1-alpha) * (aggregateCapital ^ alpha) * (N ^ (-alpha));
+r = exp(aggregateTFP) * aalpha * (aggregateCapital ^ (aalpha - 1)) * (N ^ (1-aalpha)) - delta;
+w = exp(aggregateTFP) * (1-aalpha) * (aggregateCapital ^ aalpha) * (N ^ (-aalpha));
 
     // Law of Motion for Aggregate TFP //
 
@@ -184,7 +184,7 @@ aggregateTFP = rhoTFP * aggregateTFP(-1) + sigmaTFP * aggregateTFPShock;
     // Auxiliary variables we want to output//
 
 // Log Output 
-logAggregateOutput = log(exp(aggregateTFP) * (aggregateCapital ^ alpha) * (N ^(1 - alpha)));
+logAggregateOutput = log(exp(aggregateTFP) * (aggregateCapital ^ aalpha) * (N ^(1 - aalpha)));
 
 // Log Investment
 logAggregateInvestment = log((1-N) * moment_1_1 + N * moment_2_1 - (1-delta) * aggregateCapital);

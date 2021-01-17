@@ -18,8 +18,9 @@ end;
 
  options_.steadystate.nocheck = 1;
  // Computes the steady state while avoiding checking for small numerical errors
+// steady(nocheck)
 
-    // Check regularity conditions (optional) //
+ // Check regularity conditions (optional)
  // check;
  // model_diagnostics;
  // model_info; 

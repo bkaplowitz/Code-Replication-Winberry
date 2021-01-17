@@ -288,7 +288,7 @@ def compute_MC_residual_poly(
     residual = capital - capital_new
     residual_return = residual.flatten()
     params_opt = params_new
-    return_val = np.array([residual_return, params_opt, moments, constrained])
+    return_val = np.array([residual_return,coefs, params_opt, moments, constrained])
     return return_val
 
 def exp_func_error(params, grid_moments,quad_weights, n_measure): 
