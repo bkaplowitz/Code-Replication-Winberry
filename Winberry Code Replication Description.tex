@@ -76,11 +76,16 @@ Next we run \code{compute\_MC\_Residual\_poly.py} to compute the estimated param
 \item Project the exponential family form of the density onto the moments for each epsilon to fit coefficients of exponential family using moment-matching approach
 \item compute new moments and constrained fraction of population using grid over asset space, exponential form and Gauss-Legendre quadrature
 \item Compute maximum error between new moments and old moments and new constrained and old constrained fractions. If larger than tol, loop back to (c). 
-\item Else, compute $K_{i+1}$ from using  first moment  times unconstrained fraction + constrained * $\bar{a}$. If $\lVert K_{i+1} - K_{i}\rVert \geq  tol$ then loop back to (a) with $i \leftarrow i+1$.  Else return estimated coefficients of the EMUC, parameters of the exponential family distribution, moments and new capital level. 
+\item Else, compute $K_{i+1}$ from using $K_{i+1} = $ first moment *  unconstrained fraction + constrained * $\bar{a}$. If $\lVert K_{i+1} - K_{i}\rVert \geq  tol$ then loop back to (a) with $i \leftarrow i+1$.  Else return estimated coefficients of the EMUC, parameters of the exponential family distribution, moments and new capital level. 
 
 \end{enumerate}
 \end{enumerate}
-Finally, we graph our extract policy functions for savings for employed $\epsilon =1$ and unemployed $\epsilon =0$ individuals and plot the endogenous distribution of asset holdings in steady state using our parametric form  and Young's histogram method on our grid. We can see these near-exactly match the original output from Winberry. \section{Algorithms (Dynamics)}
+Finally, we graph our extract policy functions for savings and consumption for employed $\epsilon =1$ and unemployed $\epsilon =0$ individuals and plot the endogenous distribution of asset holdings in steady state using our parametric form  and Young's histogram method on our grid. We can see these near-exactly match the original output from Winberry.
+
+
+
+
+ \section{Algorithms (Dynamics)}
 In the final portion we prepare our code to be loaded into dynare as \code{.mat} data files. The dynare program is executed through a series of custom \code{.mod} data files that describe the equations executed in the stationary component and then performs first (or higher order) perturbations. The \code{*\_steadystate.mod} file loads the steady state values computed from our previous code to Dynare to use as the point around which the perturbation will occur.
 
 \end{document}
