@@ -1,11 +1,11 @@
 from create_polynomials import compute_chebyshev
 import numpy as np
-from create_grids import scaledown
+from create_grids_ext import scaledown
 import scipy.spatial as spat
 import scipy.sparse as sparse
 import scipy as sp
 from numba import jit, njit
-from create_grids import tile_h, tile_v
+from create_grids_ext import tile_h, tile_v
 
 
 def compute_MC_Residual_Histogram(
@@ -13,13 +13,15 @@ def compute_MC_Residual_Histogram(
     alpha,
     N,
     delta,
-    beta,
+    beta_grid,
+    beta_weights,
     sigma,
     epsilon_grid,
     assets_grid,
     assets_poly,
     mu,
     tau,
+    n_beta,
     n_epsilon,
     n_assets,
     n_states,
@@ -51,25 +53,25 @@ def compute_MC_Residual_Histogram(
 
     # estimate policy rules for individuals via polynomial interpolation
     init_opt_asset_grid = np.log(
-        beta
+        beta_grid
         * (1 + r)
         * (w * (mu * (1 - epsilon_grid) + (1 - tau) * epsilon_grid) + r * assets_grid)
         ** (-sigma)
     )
     # Find coefficients for estimate  using guessed policy rule
     # do 1-d interpolation
-    # assumes here that EMUC = a'
-    coefs_mat = np.zeros((n_epsilon, n_assets))
-    for i in np.arange(0, n_epsilon):
+    coefs_mat = np.zeros((n_beta, n_epsilon, n_assets))
+    for b in np.arange(0, n_beta):
+        for i in np.arange(0, n_epsilon):
         # uses trick where i:i+1 indexing for numpy does not reduce dimmension while [i,:] reduces dimmension by 1.
-        coefs = np.sum(
-            np.multiply(
-                assets_poly.T,
-                np.ones((n_assets, 1)) @ init_opt_asset_grid[i : i + 1, :],
-            ),
-            1,
-        )
-        coefs_mat[i : i + 1, :] = coefs / assets_poly_sq
+            coefs = np.sum(
+                np.multiply(
+                    assets_poly.T,
+                    np.ones((n_assets, 1)) @ init_opt_asset_grid[b,i : i + 1, :],
+                ),
+                2,
+            )
+            coefs_mat[b,i : i + 1, :] = coefs / assets_poly_sq
     # Iterate and update coefficients
     err = 100
     iter = 0
@@ -83,7 +85,7 @@ def compute_MC_Residual_Histogram(
             assets_grid,
             epsilon_prime_grid,
             epsilon_trans_mat,
-            beta,
+            beta_grid,
             tau,
             sigma,
             r,
@@ -121,6 +123,7 @@ def compute_MC_Residual_Histogram(
     )
 
     # compute transition matrix for assets
+    # TODO: If not done today, move on to dynare portion temporarily
     # compute weighting matrices
     [index_left, index_right, weight_left, weight_right] = compute_linear_weights(
         assets_grid_fine, (assets_prime_fine).ravel(order="F"), n_epsilon
@@ -299,9 +302,8 @@ def update_coefs_poly(
     )
     # extract diags, which is entries we want, for new conditional expectation since this says state realization of epsilon today is same as cond expec entry under epsilon today
     cond_expec_mat = np.zeros((n_epsilon, n_assets))
-    # faster version using einstein notation that takes first two entries of 3 dim tensor to a single entry of 2 dim tensor = mat
-    # preserves remaining entry
-    #Operation: f:y^i_ij -> y^i_j
+    # for i_epsilon in np.arange(0,n_epsilon):
+    #    cond_expec_mat[i_epsilon,:] = cond_expec_est[i_epsilon,i_epsilon,:]
     cond_expec_mat = np.einsum("ii...->i...", cond_expec_est)
 
     coefs_new = compute_coefficients(assets_poly, n_epsilon, n_assets, assets_poly_sq, cond_expec_mat)
@@ -310,9 +312,7 @@ def update_coefs_poly(
 
 @njit
 def compute_coefficients(assets_poly, n_epsilon, n_assets, assets_poly_sq, cond_expec_mat):
-    '''Computes initial coefficients associated with the chebyshev polynomial under the rule of thumb policy. Does so by projecting the chebyshev polynomial coefficients onto the conditional expectation values.''' 
     coefs_new = np.zeros((n_epsilon, n_assets))
-    #this comes from a reduced projection term for chebyshev polynomials that is proven by noting that their bases are orthogonal. This is technically chebyshev PROJECTION WE ARE USING and not chebyshev INTERPOLATION. See Judd 1998 
     for i in np.arange(0, n_epsilon):
         coefs_new_temp = np.sum(
             np.multiply(

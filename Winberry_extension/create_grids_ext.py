@@ -8,21 +8,27 @@ def create_grids(
     n_epsilon,
     assets_min,
     assets_max,
+    beta_max,
+    beta_min,
     n_states,
+    n_beta,
     n_states_fine,
     n_assets_quad,
-    epsilon_grid,
+    epsilon_grid
 ):
     """
     Creates grids for chebyshev interpolation and estimation of density/integration.
     """
+    beta_grid = np.geomspace(beta_max, beta_min, num = n_beta).reshape((n_beta,1),order='F') #creates grid of beta values spaced out logarithmically
+    beta_weights = beta_grid/(n_beta) #mass at each point, assumed uniform and fixed.
     asset_cheb_zeros = -np.cos(
         ((2 * np.arange(1, n_assets + 1) - 1) * np.pi) / (2 * n_assets)
     ).reshape((n_assets, 1), order='F')
     assets_grid = scaleup(asset_cheb_zeros, assets_min, assets_max)
     # matrix versions of grid to use later for outerproduct (not necessary and can be ommited)
-    epsilon_mat_grid = np.tile(epsilon_grid, (n_assets, 1)).T
-    assets_mat_grid = np.tile(assets_grid.T, (n_epsilon, 1))
+    beta_mat_grid = np.tile(beta_grid, (n_epsilon,1, n_assets))
+    epsilon_mat_grid = np.tile(epsilon_grid, (n_assets,n_beta, 1)).T
+    assets_mat_grid = np.tile(assets_grid.T, (n_epsilon,n_beta, 1))
     # grid of shocks tomorrow conditional on all possible state pairs today
     epsilon_grid_prime = np.tile(epsilon_grid, (n_states, 1)).T
     # fine grids for histogram method of young 2010 for initial guess
@@ -30,8 +36,9 @@ def create_grids(
     assets_grid_fine = np.linspace(assets_min, assets_max, n_assets_fine).reshape((n_assets_fine, 1))
     assets_grid_fine_zeros = scaledown(assets_grid_fine, assets_min, assets_max)
     # matrix versions of grid to use later for outer product
-    epsilon_mat_grid_fine = np.tile(epsilon_grid, (n_assets_fine, 1)).T
-    assets_mat_grid_fine = np.tile(assets_grid_fine.T, (n_epsilon, 1))
+    epsilon_mat_grid_fine = np.tile(epsilon_grid, (n_assets_fine, n_beta, 1)).T
+    assets_mat_grid_fine = np.tile(assets_grid_fine.T, (n_epsilon, n_beta, 1))
+    beta_mat_grid_fine = np.tile(beta_grid, (n_epsilon, 1, n_assets_fine))
     # grid of shocks tomorrow conditional on all possible state pairs today
     epsilon_grid_prime_fine = np.tile(epsilon_grid, (n_states_fine, 1)).T
 
@@ -65,6 +72,10 @@ def create_grids(
         assets_grid_quad,
         epsilon_grid_mat_quad,
         assets_grid_mat_quad,
+        beta_mat_grid,
+        beta_mat_grid_fine,
+        beta_grid,
+        beta_weights
     ]
 
 @njit

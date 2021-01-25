@@ -3,5 +3,6 @@
     "todo-tree.tree.showBadges": false,
     "python.analysis.completeFunctionParens": true,
     "python.analysis.typeCheckingMode": "basic",
-    "vsintellicode.features.python.deepLearning": "enabled"
+    "vsintellicode.features.python.deepLearning": "enabled",
+    "jupyter.jupyterServerType": "local"
 }

@@ -1,0 +1,88 @@
+\documentclass[11pt]{article}
+\title{Winberry 2018 Code Replication}
+\author{Brandon Kaplowitz \thanks{Immense thanks to Tom Winberry for writing the original 2018 code which my code is heavily adopted from and the many helpful comments in understanding it.}}
+\usepackage{todonotes}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{xcolor,amsmath}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\newcommand{\code}[1]{\texttt{#1}}
+\DontPrintSemicolon
+
+% Define pseudocode formatting
+\renewcommand{\KwSty}[1]{\textnormal{\textcolor{blue!90!black}{\ttfamily\bfseries #1}}\unskip}
+\renewcommand{\ArgSty}[1]{\textnormal{\ttfamily #1}\unskip}
+\SetKwComment{Comment}{\color{green!50!black}// }{}
+\renewcommand{\CommentSty}[1]{\textnormal{\ttfamily\color{green!50!black}#1}\unskip}
+\newcommand{\assign}{\leftarrow}
+\newcommand{\var}{\texttt}
+\newcommand{\FuncCall}[2]{\texttt{\bfseries #1(#2)}}
+\SetKwProg{Function}{function}{}{}
+\renewcommand{\ProgSty}[1]{\texttt{\bfseries #1}}
+
+\begin{document}
+\maketitle
+\section{Introduction}
+This document walks through the main approaches used in replicating Winberry 2018 and the current limitations/future extensions possible. The code is written almost entirely in Python, except for the perturbation component which is written using Dynare. Thanks must be given to both Tom Winberry for the original code and the Dynare code library. The Python code uses several key packages including:
+\begin{itemize}
+\item Numpy 
+\item Scipy
+\item Icecream (for debugging)
+\item Logging (for debugging)
+\item Base.IO
+\item Base.Time
+\item Matplotlib
+\item Numba (for speeding up portions)	
+\end{itemize}
+and the code would not be possible without these libraries.
+
+\section{Algorithms (Stationary)}
+Now I will give a brief description of each key aspect of the code in a verbal Pseudocode format. 
+First, we go through and set the key parameters of the model and approximation in the \code{replication\_winberry\_2018.ipynb} main file.
+Then we run \code{create\_grids.py}, which respectively construct the grids we need on the asset, and epsilon space, as well as scaled versions of the asset space between 0 and 1 to find the Chebyshev zeros. We then run \code{create\_polynomials.py} which generates the Chebyshev polynomials over the asset space which we use to interpolate. 
+Now, we get to the first of our three main algorithms, Young's 2010 method, which is implemented in \code{compute\_MC\_Residual\_Histogram.py}. This code works as follows:
+\begin{enumerate}
+	\item Solve for the optimal capital level as follows, given an initial guess $K_0$ of capital and $i=0$:
+	\begin{enumerate}
+	\item Computed implied prices from $K_i$.
+	\item Given an initial guess of the next period assets via a rule of thumb decision rule, we loop through and update the EMUC by:
+	\begin{enumerate}
+	\item On the first iteration only, projecting the current chebyshev polynomial approximation on the next period assets (effectively assuming $E(V'(a',\epsilon'))={a'}^2/2$) and extracting coefficients of  the EMUC-estimating chebyshev polynomial
+	\item Using the estimated chebyshev polynomial EMUC to extract next period assets
+	\item   Create a new  chebyshev polynomials with zeros on next period assets
+	\item Extract an implied future savings and future consumption
+	\item  Compute the empirical EMUC $\widetilde{EMUC}$ using estimated future consumption from FOC
+	\item  Project the new chebyshev polynomial onto $\widetilde{EMUC}$ to extract new coefficients
+	\item  Update coefficients as a mixture between the previous estimate and current estimate and loop back to $(ii)$ until these coefficients converge below a given tolerance level.	
+	\item Return an estimate of $EMUC$
+	\end{enumerate}
+	\item Using the EMUC estimate and FOC, extract implied consumption and savings, as well as endogenous empirical distribution over assets and epsilon $g'(a',\epsilon')$
+	\item Aggregate up savings to get a new $\hat{K}_{i+1}$ guess using Gauss-Legendre quadrature (chosen because it performs exact integration for the polynomial integral here.)
+	\item Create a true new estimate of $K_{i+1}$ as a weighted sum of $\hat{K}_{i+1}$ and $K_{i}$ 
+	\item Check  if $\lVert{K_{i+1} - K_{i}}\rVert_{\infty}<\text{tol} $. If so, return $K_{i+1}\equiv K_{hist}$, else set $i \leftarrow i+1$ and loop back to (a).
+	\end{enumerate}
+	\item Finally, we run the sequence above one more time up to part c, with the final $K_{hist}$ estimated to extract the implied consumption, savings and distribution of savings (histogram)
+\end{enumerate}
+Next we run \code{compute\_MC\_Residual\_poly.py} to compute the estimated parametric form of the SS distribution and a new guess of $K_{SS}$. It works as follows: 
+\begin{enumerate}
+	
+\item Compute the first \code{nmeasure} (here 8) centered moments of the empirical distribution over assets for each $\epsilon$. \code{nmeasure} will represent the truncation order of our parametric exponential family approximation to the distribution.
+
+\item 	Solve for the optimal capital level as follows, given an initial guess $K_{hist}$ of capital and $i=0$:
+\begin{enumerate}
+\item Computed implied prices from $K_i$.
+\item Follow steps (i)-(viii) of \code{compute\_MC\_Residual\_histogram.py} to compute the chebyshev projection of the EMUC
+\item Extract the implied asset prime grid using the EMUC estimate
+\item Project the exponential family form of the density onto the moments for each epsilon to fit coefficients of exponential family using moment-matching approach
+\item compute new moments and constrained fraction of population using grid over asset space, exponential form and Gauss-Legendre quadrature
+\item Compute maximum error between new moments and old moments and new constrained and old constrained fractions. If larger than tol, loop back to (c). 
+\item Else, compute $K_{i+1}$ from using  first moment  times unconstrained fraction + constrained * $\bar{a}$. If $\lVert K_{i+1} - K_{i}\rVert \geq  tol$ then loop back to (a) with $i \leftarrow i+1$.  Else return estimated coefficients of the EMUC, parameters of the exponential family distribution, moments and new capital level. 
+
+\end{enumerate}
+\end{enumerate}
+Finally, we graph our extract policy functions for savings for employed $\epsilon =1$ and unemployed $\epsilon =0$ individuals and plot the endogenous distribution of asset holdings in steady state using our parametric form  and Young's histogram method on our grid. We can see these near-exactly match the original output from Winberry. \section{Algorithms (Dynamics)}
+In the final portion we prepare our code to be loaded into dynare as \code{.mat} data files. The dynare program is executed through a series of custom \code{.mod} data files that describe the equations executed in the stationary component and then performs first (or higher order) perturbations. The \code{*\_steadystate.mod} file loads the steady state values computed from our previous code to Dynare to use as the point around which the perturbation will occur.
+
+\end{document}
+
+

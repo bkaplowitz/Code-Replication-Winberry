@@ -1,0 +1,22 @@
+This is Dynare++, Copyright (C) 2004-2011, Ondra Kamenik
+Dynare++ comes with ABSOLUTELY NO WARRANTY and is distributed under
+GPL: modules integ, tl, kord, sylv, src, extern and documentation
+LGPL: modules parser, utils
+ for GPL  see http://www.gnu.org/licenses/gpl.html
+ for LGPL see http://www.gnu.org/licenses/lgpl.html
+
+
+System info: Darwin 20.2.0 Darwin Kernel Version 20.2.0: Wed Dec  2 20:39:59 PST 2020; root:xnu-7195.60.75~1/RELEASE_X86_64 x86_64, processors online: 12
+
+Start time: Sun Jan 17 00:11:05 2021
+
+  ------ elapsed time (seconds)                     
+  |       ------ record unique identifier           
+  |       |     ------ load average                 
+  |       |     |    ------ available memory (MB)   
+  |       |     |    |     ------  major faults (MB)
+  |       |     |    |     |                        
+  V       V     V    V     V                        
+
+0.00342:S00000:3.3:0.390:      : Non-linear solver for deterministic steady state By-passed 
+0.00351:E00000:3.3:0.390:000000: Non-linear solver for deterministic steady state By-passed 
