@@ -1,0 +1,9 @@
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is '/Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/.texpadtmp/Winberry Code Replication Description.blg'
+[119] biber-darwin:340> INFO - === Mon Jan 25, 2021, 19:25:04
+[145] Biber.pm:415> INFO - Reading '/Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/.texpadtmp/Winberry Code Replication Description.bcf'
+[330] Biber.pm:952> INFO - Found 4 citekeys in bib section 0
+[346] Biber.pm:4340> INFO - Processing section 0
+[359] Biber.pm:4531> INFO - Looking for bibtex format file 'replication_sources.bib' for section 0
+[560] Utils.pm:411> ERROR - Cannot find 'replication_sources.bib'!
+[561] Biber.pm:132> INFO - ERRORS: 1

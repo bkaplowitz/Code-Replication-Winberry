@@ -1,0 +1,19 @@
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is '/Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/Latex/Winberry Code Replication Description.blg'
+[135] biber-darwin:340> INFO - === Mon Jan 25, 2021, 19:47:28
+[170] Biber.pm:415> INFO - Reading '/Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/Latex/Winberry Code Replication Description.bcf'
+[555] Biber.pm:952> INFO - Found 4 citekeys in bib section 0
+[580] Biber.pm:4340> INFO - Processing section 0
+[603] Biber.pm:4531> INFO - Looking for bibtex format file 'replication_sources.bib' for section 0
+[612] bibtex.pm:1689> INFO - LaTeX decoding ...
+[646] bibtex.pm:1494> INFO - Found BibTeX data source 'replication_sources.bib'
+[734] Utils.pm:395> WARN - legacy month field 'nov' in entry 'Bayer2020' is not an integer - this will probably not sort properly.
+[745] Utils.pm:395> WARN - legacy month field 'jan' in entry 'Winberry2021' is not an integer - this will probably not sort properly.
+[769] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'level = 4' with 'level = 2'
+[769] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[769] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[769] Biber.pm:4168> INFO - Sorting list 'cms/global//global/global' of type 'entry' with template 'cms' and locale 'en-US'
+[769] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[796] bbl.pm:654> INFO - Writing '/Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/Latex/Winberry Code Replication Description.bbl' with encoding 'UTF-8'
+[804] bbl.pm:757> INFO - Output to /Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/Latex/Winberry Code Replication Description.bbl
+[804] Biber.pm:128> INFO - WARNINGS: 2
