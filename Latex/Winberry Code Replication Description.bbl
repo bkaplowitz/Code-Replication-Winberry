@@ -153,7 +153,7 @@
       \verb 10.3982/qe740
       \endverb
     \endentry
-    \entry{Winberry2021}{misc}{}
+    \entry{Winberry2021}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=e8c45946338c8a02ba4b8275341a7a2c}{%
            family={Winberry},
@@ -179,8 +179,8 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{I study the aggregate implications of micro-level lumpy investment in a model consistent with the empirical dynamics of the real interest rate. The elasticity of aggregate investment with respect to shocks is procyclical because more firms are likely to make an extensive margin investment in expansions than in recessions. Matching the dynamics of the real interest rate is key to generating this result because it disciplines the interest-elasticity of investment and avoids counterfactual behavior of the model that would otherwise eliminate most of the procyclical responsiveness. Therefore, data on interest rates place important discipline in aggregating micro-level investment behavior.}
-      \field{booktitle}{American Economic Review}
       \field{issn}{19447981}
+      \field{journaltitle}{American Economic Review}
       \field{month}{1}
       \field{number}{1}
       \field{title}{{Lumpy Investment, Business Cycles, and Stimulus Policy}}
@@ -191,7 +191,7 @@
       \verb{doi}
       \verb 10.1257/aer.20161723
       \endverb
-      \keyw{Business Taxes and Subsidies including sales and v,Capacity,Business Taxes and Subsidies including s,Capital,Fixed Investment and Inventory Studies,Intangible Capital}
+      \keyw{Business Taxes and Subsidies including s,Business Taxes and Subsidies including sales and v,Capacity,Capital,Fixed Investment and Inventory Studies,Intangible Capital}
     \endentry
     \entry{Young2010}{article}{}
       \name{author}{1}{}{%
