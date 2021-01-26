@@ -1,9 +1,12 @@
 name: idp
 channels:
   - intel
-  - conda-forge
 dependencies:
   - numpy
   - scipy
   - matplotlib
   - numba
+  - gnuplot
+  - octave
+  - octave_kernel 
+  - texinfo
