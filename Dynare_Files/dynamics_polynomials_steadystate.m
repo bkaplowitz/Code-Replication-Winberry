@@ -11,8 +11,8 @@ function [ys, check] = dynamics_polynomials_steadystate(ys, exo)
     %----------------------------------------------------------------
     % Call parameters (the next set of commands will overwrite some)
     %----------------------------------------------------------------
-    load('../Data/approximationParameters.mat')
-    load('../Data/economicParameters.mat')
+    load('../Data/approximationParameters')
+    load('../Data/economicParameters')
 
     %----------------------------------------------------------------
     % Read in parameters from Dynare declaration
