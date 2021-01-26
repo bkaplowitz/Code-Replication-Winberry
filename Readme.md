@@ -19,7 +19,8 @@ For an easy way to do this and to avoid interfering with other files I have incl
 ```
 cd \directory_location\unzipped_replication_file_folder
 conda env create -f environment.yml
-conda activate winberry-replication```
+conda activate winberry-replication
+```
 This will setup the winberry-replication environment needed to run the program. 
 If you would later like to remove this environment run:
 ``` 
