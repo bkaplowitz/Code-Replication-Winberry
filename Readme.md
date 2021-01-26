@@ -3,7 +3,7 @@
 Two ways to replicate:
 
 ### The easy way:
-Please run the binder link below and open the ipython notebook, go to cells and hit run all.  This will reproduce everything but the final IRF graphs from Matlab, which is due to an incompatibility between the version of Octave on Ubuntu and Dynare. It will, however, print out the numerical IRF estimated and correlation coefficient.
+Please run the binder link below and open the ipython notebook, go to cells, uncomment the code related to oct2py or octave and comment the code related to matlab and hit run all.  This will reproduce everything but the final IRF graphs from Matlab, which is due to an incompatibility between the version of Octave on Ubuntu and Dynare. It will, however, print out the numerical IRF estimated and correlation coefficient.
 
 ### The harder 100% way:
 
