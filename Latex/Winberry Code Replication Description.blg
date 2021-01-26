@@ -1,5 +1,6 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is '/Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/Latex/Winberry Code Replication Description.blg'
+<<<<<<< Updated upstream
 [101] biber-darwin:340> INFO - === Tue Jan 26, 2021, 15:11:51
 [132] Biber.pm:415> INFO - Reading '/Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/Latex/Winberry Code Replication Description.bcf'
 [310] Biber.pm:952> INFO - Found 5 citekeys in bib section 0
@@ -18,3 +19,23 @@
 [474] bbl.pm:654> INFO - Writing '/Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/Latex/Winberry Code Replication Description.bbl' with encoding 'UTF-8'
 [479] bbl.pm:757> INFO - Output to /Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/Latex/Winberry Code Replication Description.bbl
 [479] Biber.pm:128> INFO - WARNINGS: 3
+=======
+[138] biber-darwin:340> INFO - === Tue Jan 26, 2021, 15:03:07
+[171] Biber.pm:415> INFO - Reading '/Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/Latex/Winberry Code Replication Description.bcf'
+[353] Biber.pm:952> INFO - Found 5 citekeys in bib section 0
+[369] Biber.pm:4340> INFO - Processing section 0
+[382] Biber.pm:4531> INFO - Looking for bibtex format file 'replication_sources.bib' for section 0
+[386] bibtex.pm:1689> INFO - LaTeX decoding ...
+[404] bibtex.pm:1494> INFO - Found BibTeX data source 'replication_sources.bib'
+[463] Utils.pm:395> WARN - legacy month field 'jan' in entry 'Young2010' is not an integer - this will probably not sort properly.
+[470] Utils.pm:395> WARN - legacy month field 'nov' in entry 'Bayer2020' is not an integer - this will probably not sort properly.
+[476] Utils.pm:395> WARN - legacy month field 'jan' in entry 'Winberry2021' is not an integer - this will probably not sort properly.
+[496] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[497] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[497] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'level = 4' with 'level = 2'
+[497] Biber.pm:4168> INFO - Sorting list 'cms/global//global/global' of type 'entry' with template 'cms' and locale 'en-US'
+[497] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[515] bbl.pm:654> INFO - Writing '/Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/Latex/Winberry Code Replication Description.bbl' with encoding 'UTF-8'
+[518] bbl.pm:757> INFO - Output to /Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/Latex/Winberry Code Replication Description.bbl
+[519] Biber.pm:128> INFO - WARNINGS: 3
+>>>>>>> Stashed changes
