@@ -1,4 +1,6 @@
 dynare
 octave
+octave-statistics
+octave-control
 gnuplot
 ghostscript
