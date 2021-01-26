@@ -1,3 +1,4 @@
 dynare
+octave
 gnuplot
 ghostscript
