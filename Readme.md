@@ -19,7 +19,8 @@ For an easy way to do this and to avoid interfering with other files I have incl
 ```
 cd \directory_location\unzipped_replication_file_folder
 conda env create -f environment.yml
-conda activate winberry-replication```
+conda activate winberry-replication
+```
 This will setup the winberry-replication environment needed to run the program. 
 If you would later like to remove this environment run:
 ``` 
@@ -34,7 +35,9 @@ Please make sure you have run ```conda activate winberry-replication``` before r
 It should take less than a minute to install. 
 
 Finally, after activating the environment and installing matlab for python you can run: 
-```jupyter lab directory_to_unzipped_file\replication_winberry_2018.ipynb```
+```
+jupyter lab directory_to_unzipped_file\replication_winberry_2018.ipynb
+```
 
 
 Backend files written to run the IPython Notebook are in SteadyState_Libraries. Files written to run Dynare are in Dynare_Files.
