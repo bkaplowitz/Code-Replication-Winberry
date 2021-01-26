@@ -1,6 +1,9 @@
 dynare
+<<<<<<< HEAD
 octave
 octave-statistics
 octave-control
+=======
+>>>>>>> parent of 5587cb7... updated requirements
 gnuplot
 ghostscript
