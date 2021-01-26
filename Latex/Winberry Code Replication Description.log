@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.23)  25 JAN 2021 22:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.23)  26 JAN 2021 11:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -691,103 +691,121 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
 )
 \Hy@SectionHShift=\skip79
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/caption/subcaption.sty
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2020/12/07 v2.8 Micro-typographical refinements (RS)
+\MT@toks=\toks34
+\MT@count=\count433
+LaTeX Info: Redefining \textls on input line 788.
+\MT@outer@kern=\dimen277
+LaTeX Info: Redefining \textmicrotypecontext on input line 1358.
+\MT@listname@count=\count434
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2020/12/07 v2.8 Definitions specific to pdftex (RS)
+LaTeX Info: Redefining \lsstyle on input line 915.
+LaTeX Info: Redefining \lslig on input line 915.
+\MT@outer@space=\skip80
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2020/12/07 v2.8 microtype main configuration file (RS)
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
-\c@subfigure=\count433
-\c@subtable=\count434
+\c@subfigure=\count435
+\c@subtable=\count436
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count435
-\float@exts=\toks34
+\c@float@type=\count437
+\float@exts=\toks35
 \float@box=\box61
-\@float@everytoks=\toks35
+\@float@everytoks=\toks36
 \@floatcapt=\box62
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count436
-\algocf@hangindent=\skip80
+\c@AlgoLine=\count438
+\algocf@hangindent=\skip81
  (/usr/local/texlive/2020/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count437
+\c@checkoddpage=\count439
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/relsize/relsize.sty
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-\skiptotal=\skip81
-\skiplinenumber=\skip82
-\skiprule=\skip83
-\skiphlne=\skip84
-\skiptext=\skip85
-\skiplength=\skip86
-\algomargin=\skip87
-\skipalgocfslide=\skip88
-\algowidth=\dimen277
-\inoutsize=\dimen278
-\inoutindent=\dimen279
-\interspacetitleruled=\dimen280
-\interspacealgoruled=\dimen281
-\interspacetitleboxruled=\dimen282
-\algocf@ruledwidth=\skip89
+\skiptotal=\skip82
+\skiplinenumber=\skip83
+\skiprule=\skip84
+\skiphlne=\skip85
+\skiptext=\skip86
+\skiplength=\skip87
+\algomargin=\skip88
+\skipalgocfslide=\skip89
+\algowidth=\dimen278
+\inoutsize=\dimen279
+\inoutindent=\dimen280
+\interspacetitleruled=\dimen281
+\interspacealgoruled=\dimen282
+\interspacetitleboxruled=\dimen283
+\algocf@ruledwidth=\skip90
 \algocf@inoutbox=\box63
 \algocf@inputbox=\box64
-\AlCapSkip=\skip90
-\AlCapHSkip=\skip91
-\algoskipindent=\skip92
+\AlCapSkip=\skip91
+\AlCapHSkip=\skip92
+\algoskipindent=\skip93
 \algocf@nlbox=\box65
 \algocf@hangingbox=\box66
 \algocf@untilbox=\box67
-\algocf@skipuntil=\skip93
+\algocf@skipuntil=\skip94
 \algocf@capbox=\box68
-\algocf@lcaptionbox=\skip94
-\algoheightruledefault=\skip95
-\algoheightrule=\skip96
-\algotitleheightruledefault=\skip97
-\algotitleheightrule=\skip98
-\c@algocfline=\count438
-\c@algocfproc=\count439
-\c@algocf=\count440
+\algocf@lcaptionbox=\skip95
+\algoheightruledefault=\skip96
+\algoheightrule=\skip97
+\algotitleheightruledefault=\skip98
+\algotitleheightrule=\skip99
+\c@algocfline=\count440
+\c@algocfproc=\count441
+\c@algocf=\count442
 \algocf@algoframe=\box69
 \algocf@algobox=\box70
 )
-\@quotelevel=\count441
-\@quotereset=\count442
+\@quotelevel=\count443
+\@quotereset=\count444
  (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-01-09 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count443
+\l__kernel_color_stack_int=\count445
 \l__pdf_internal_box=\box71
 ) (./Winberry Code Replication Description.aux)
 \openout1 = `"Winberry Code Replication Description.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
  (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count444
-\scratchdimen=\dimen283
+\scratchcounter=\count446
+\scratchdimen=\dimen284
 \scratchbox=\box72
-\nofMPsegments=\count445
-\nofMParguments=\count446
-\everyMPshowfont=\toks36
-\MPscratchCnt=\count447
-\MPscratchDim=\dimen284
-\MPnumerator=\count448
-\makeMPintoPDFobject=\count449
-\everyMPtoPDFconversion=\toks37
+\nofMPsegments=\count447
+\nofMParguments=\count448
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count449
+\MPscratchDim=\dimen285
+\MPnumerator=\count450
+\makeMPintoPDFobject=\count451
+\everyMPtoPDFconversion=\toks38
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -833,137 +851,140 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file '"Winberry Code Replication Description".bbl' found.
  (./Winberry Code Replication Description.bbl)
-Package biblatex Info: Reference section=0 on input line 32.
-Package biblatex Info: Reference segment=0 on input line 32.
+Package biblatex Info: Reference section=0 on input line 33.
+Package biblatex Info: Reference segment=0 on input line 33.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 32.
-LaTeX Info: Redefining \ref on input line 32.
-LaTeX Info: Redefining \pageref on input line 32.
-LaTeX Info: Redefining \nameref on input line 32.
+Package hyperref Info: Link coloring OFF on input line 33.
+LaTeX Info: Redefining \ref on input line 33.
+LaTeX Info: Redefining \pageref on input line 33.
+LaTeX Info: Redefining \nameref on input line 33.
  (./Winberry Code Replication Description.out) (./Winberry Code Replication Description.out)
 \@outlinefile=\write5
 \openout5 = `"Winberry Code Replication Description.out"'.
 
-<../Figures/save_rule.png, id=68, 433.62pt x 289.08pt>
-File: ../Figures/save_rule.png Graphic file (type png)
-<use ../Figures/save_rule.png>
-Package pdftex.def Info: ../Figures/save_rule.png  used on input line 58.
-(pdftex.def)             Requested size: 195.1272pt x 130.0848pt.
-
-Overfull \hbox (15.1272pt too wide) in paragraph at lines 58--59
- [][] 
- []
-
-<../Figures/cons_rule.png, id=70, 433.62pt x 289.08pt>
-File: ../Figures/cons_rule.png Graphic file (type png)
-<use ../Figures/cons_rule.png>
-Package pdftex.def Info: ../Figures/cons_rule.png  used on input line 63.
-(pdftex.def)             Requested size: 195.1272pt x 130.0848pt.
-
-Overfull \hbox (15.1272pt too wide) in paragraph at lines 63--64
- [][] 
- []
-
-
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 56--65
-[]$[]$ $[]$ 
- []
-
-<../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.18.01 PM.png, id=71, 555.07375pt x 350.30875pt>
-File: ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.18.01 PM.png Graphic file (type png)
-<use ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.18.01 PM.png>
-Package pdftex.def Info: ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.18.01 PM.png  used on input line 69.
-(pdftex.def)             Requested size: 499.56174pt x 315.27496pt.
-
-Overfull \hbox (139.56174pt too wide) in paragraph at lines 69--70
- [][] 
- []
-
-
-LaTeX Warning: Float too large for page by 18.55952pt on input line 72.
-
-
-Overfull \hbox (51.78413pt too wide) in paragraph at lines 49--73
-\OT1/cmr/m/n/10.95 pa-ram-e-ters of the model and ap-prox-i-ma-tion in the \OT1/cmtt/m/n/10.95 replication[]winberry[]2018.ipynb
- []
-
-
-Overfull \hbox (94.54262pt too wide) in paragraph at lines 49--73
-\OT1/cmr/m/n/10.95 with de-tails left to the ap-pendix of this De-scrip-tion. Next we run \OT1/cmtt/m/n/10.95 compute[]MC[]Residual[]poly.py
- []
-
-[1
+LaTeX Info: Redefining \microtypecontext on input line 33.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+LaTeX Info: Redefining \showhyphens on input line 33.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
+) [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<../Figures/ivar_dist_unemployed.png, id=86, 433.62pt x 289.08pt>
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Overfull \hbox (1.24744pt too wide) in paragraph at lines 51--55
+[]\OT1/cmr/m/n/10.95 (-20) First, in the main file \OT1/cmtt/m/n/10.95 replication[]winberry[]2018.ipynb\OT1/cmr/m/n/10.95 (-20) , we go through
+ []
+
+<../Figures/save_rule.png, id=83, 433.62pt x 289.08pt>
+File: ../Figures/save_rule.png Graphic file (type png)
+<use ../Figures/save_rule.png>
+Package pdftex.def Info: ../Figures/save_rule.png  used on input line 59.
+(pdftex.def)             Requested size: 195.1272pt x 130.0848pt.
+
+Overfull \hbox (15.1272pt too wide) in paragraph at lines 59--60
+ [][] 
+ []
+
+<../Figures/cons_rule.png, id=85, 433.62pt x 289.08pt>
+File: ../Figures/cons_rule.png Graphic file (type png)
+<use ../Figures/cons_rule.png>
+Package pdftex.def Info: ../Figures/cons_rule.png  used on input line 64.
+(pdftex.def)             Requested size: 195.1272pt x 130.0848pt.
+
+Overfull \hbox (15.1272pt too wide) in paragraph at lines 64--65
+ [][] 
+ []
+
+
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 57--66
+[]$[]$ $[]$ 
+ []
+
+<../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.18.01 PM.png, id=86, 555.07375pt x 350.30875pt>
+File: ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.18.01 PM.png Graphic file (type png)
+<use ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.18.01 PM.png>
+Package pdftex.def Info: ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.18.01 PM.png  used on input line 70.
+(pdftex.def)             Requested size: 499.56174pt x 315.27496pt.
+
+Overfull \hbox (139.56174pt too wide) in paragraph at lines 70--71
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 18.55952pt on input line 73.
+
+<../Figures/ivar_dist_unemployed.png, id=87, 433.62pt x 289.08pt>
 File: ../Figures/ivar_dist_unemployed.png Graphic file (type png)
 <use ../Figures/ivar_dist_unemployed.png>
-Package pdftex.def Info: ../Figures/ivar_dist_unemployed.png  used on input line 78.
+Package pdftex.def Info: ../Figures/ivar_dist_unemployed.png  used on input line 79.
 (pdftex.def)             Requested size: 195.1272pt x 130.0848pt.
 
-Overfull \hbox (15.1272pt too wide) in paragraph at lines 78--79
+Overfull \hbox (15.1272pt too wide) in paragraph at lines 79--80
  [][] 
  []
 
-<../Figures/ivar_dist_employed.png, id=87, 433.62pt x 289.08pt>
+<../Figures/ivar_dist_employed.png, id=88, 433.62pt x 289.08pt>
 File: ../Figures/ivar_dist_employed.png Graphic file (type png)
 <use ../Figures/ivar_dist_employed.png>
-Package pdftex.def Info: ../Figures/ivar_dist_employed.png  used on input line 82.
+Package pdftex.def Info: ../Figures/ivar_dist_employed.png  used on input line 83.
 (pdftex.def)             Requested size: 195.1272pt x 130.0848pt.
 
-Overfull \hbox (15.1272pt too wide) in paragraph at lines 82--83
+Overfull \hbox (15.1272pt too wide) in paragraph at lines 83--84
  [][] 
  []
 
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 76--84
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 77--85
 []$[]$ $[]$ 
  []
 
-<../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.26.01 PM.png, id=88, 447.6725pt x 253.94875pt>
+<../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.26.01 PM.png, id=89, 447.6725pt x 253.94875pt>
 File: ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.26.01 PM.png Graphic file (type png)
 <use ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.26.01 PM.png>
-Package pdftex.def Info: ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.26.01 PM.png  used on input line 88.
+Package pdftex.def Info: ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.26.01 PM.png  used on input line 89.
 (pdftex.def)             Requested size: 447.6714pt x 253.94812pt.
 
-Overfull \hbox (87.6714pt too wide) in paragraph at lines 88--89
+Overfull \hbox (87.6714pt too wide) in paragraph at lines 89--90
  [][] 
  []
 
-<../Figures/dynamics_polynomials_IRF_aggregateTFPShock.pdf, id=92, 471.7625pt x 368.37625pt>
+[2] [3 <../Figures/save_rule.png> <../Figures/cons_rule.png> <../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.18.01 PM.png>] [4 <../Figures/ivar_dist_unemployed.png> <../Figures/ivar_dist_employed.png> <../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.26.01 PM.png>]
+<../Figures/dynamics_polynomials_IRF_aggregateTFPShock.pdf, id=117, 471.7625pt x 368.37625pt>
 File: ../Figures/dynamics_polynomials_IRF_aggregateTFPShock.pdf Graphic file (type pdf)
 <use ../Figures/dynamics_polynomials_IRF_aggregateTFPShock.pdf>
-Package pdftex.def Info: ../Figures/dynamics_polynomials_IRF_aggregateTFPShock.pdf  used on input line 99.
+Package pdftex.def Info: ../Figures/dynamics_polynomials_IRF_aggregateTFPShock.pdf  used on input line 101.
 (pdftex.def)             Requested size: 155.6821pt x 121.56453pt.
-<../Figures/dynamics_polynomials_IRF_aggregateTFPShock_second_order.pdf, id=93, 471.7625pt x 368.37625pt>
+<../Figures/dynamics_polynomials_IRF_aggregateTFPShock_second_order.pdf, id=118, 471.7625pt x 368.37625pt>
 File: ../Figures/dynamics_polynomials_IRF_aggregateTFPShock_second_order.pdf Graphic file (type pdf)
 <use ../Figures/dynamics_polynomials_IRF_aggregateTFPShock_second_order.pdf>
-Package pdftex.def Info: ../Figures/dynamics_polynomials_IRF_aggregateTFPShock_second_order.pdf  used on input line 103.
+Package pdftex.def Info: ../Figures/dynamics_polynomials_IRF_aggregateTFPShock_second_order.pdf  used on input line 105.
 (pdftex.def)             Requested size: 167.47325pt x 130.77167pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 97--105
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 99--107
 []$[]$ $[]$ 
  []
 
-<../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.25.48 PM.png, id=94, 474.77374pt x 441.65pt>
+<../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.25.48 PM.png, id=119, 474.77374pt x 441.65pt>
 File: ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.25.48 PM.png Graphic file (type png)
 <use ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.25.48 PM.png>
-Package pdftex.def Info: ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.25.48 PM.png  used on input line 109.
+Package pdftex.def Info: ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.25.48 PM.png  used on input line 111.
 (pdftex.def)             Requested size: 189.90613pt x 176.65686pt.
-[2] [3 <../Figures/save_rule.png> <../Figures/cons_rule.png> <../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.18.01 PM.png>] [4 <../Figures/ivar_dist_unemployed.png> <../Figures/ivar_dist_employed.png> <../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.26.01 PM.png>] [5 <../Figures/dynamics_polynomials_IRF_aggregateTFPShock.pdf> <../Figures/dynamics_polynomials_IRF_aggregateTFPShock_second_order.pdf> <../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.25.48 PM.png>] [6] [7]
-Overfull \hbox (14.44429pt too wide) in paragraph at lines 160--160
-[][]\OT1/cmr/m/n/10.95 Schmitt-Grohe, Stephanie, Mart^^S^^Pn Uribe, Stephanie Schmitt-Grohe, and Mart^^S^^Pn
- []
-
-
-Overfull \hbox (7.11377pt too wide) in paragraph at lines 160--160
-\OT1/cmr/m/n/10.95 Uribe. 2004. ``Solv-ing dy-namic gen-eral equi-lib-rium mod-els us-ing a second-
- []
-
-[8] [9] (./Winberry Code Replication Description.aux)
+[5 <../Figures/dynamics_polynomials_IRF_aggregateTFPShock.pdf> <../Figures/dynamics_polynomials_IRF_aggregateTFPShock_second_order.pdf> <../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.25.48 PM.png>] [6] [7] [8] [9] [10] (./Winberry Code Replication Description.aux)
 Package rerunfilecheck Info: File `"Winberry Code Replication Description".out' has not changed.
 (rerunfilecheck)             Checksum: 200ECCCC4853A82E10CEE7053407BC71;472.
 Package logreq Info: Writing requests to '"Winberry Code Replication Description".run.xml'.
@@ -971,18 +992,18 @@ Package logreq Info: Writing requests to '"Winberry Code Replication Description
 
  ) 
 Here is how much of TeX's memory you used:
- 28773 strings out of 479304
- 562712 string characters out of 5867281
- 1607597 words of memory out of 5000000
- 45450 multiletter control sequences out of 15000+600000
- 412388 words of font info for 58 fonts, out of 8000000 for 9000
+ 30456 strings out of 479304
+ 591678 string characters out of 5867281
+ 1664311 words of memory out of 5000000
+ 46986 multiletter control sequences out of 15000+600000
+ 415967 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,11n,130p,1290b,3901s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 128i,11n,130p,1821b,3901s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on "Winberry Code Replication Description.pdf" (9 pages, 2732271 bytes).
+Output written on "Winberry Code Replication Description.pdf" (10 pages, 2737258 bytes).
 PDF statistics:
- 269 PDF objects out of 1000 (max. 8388607)
- 206 compressed objects within 3 object streams
- 51 named destinations out of 1000 (max. 500000)
- 218 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 278 PDF objects out of 1000 (max. 8388607)
+ 214 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 31450 words of extra memory for PDF output out of 35830 (max. 10000000)
 

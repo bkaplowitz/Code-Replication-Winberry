@@ -1,9 +1,10 @@
-function [ys, check] = dynamics_polynomials_steadystate(ys, exo)
+function [ys,params, check] = dynamics_polynomials_steadystate(ys, exo, M_, options)
 
     %
     %
     % Modified version of the baseline dynare file by 
     % Thomas Winberry, July 26th, 2016
+    % new version of dynare requires changes to arguments.
 
     tStart = tic;
     fprintf('\nComputing steady state...\n')
@@ -27,8 +28,8 @@ function [ys, check] = dynamics_polynomials_steadystate(ys, exo)
     % Read out parameters to access them with their name
     for iParameter = 1:M_.param_nbr
         paramname = deblank(M_.param_names(iParameter, :));
-        eval(['global ' paramname]);
-        eval([paramname ' = M_.params(' int2str(iParameter) ');']);
+        eval(['global ' char(paramname)]);
+        eval([char(paramname) ' = M_.params(' int2str(iParameter) ');']);
     end
 
     %----------------------------------------------------------------
@@ -79,11 +80,17 @@ function [ys, check] = dynamics_polynomials_steadystate(ys, exo)
     logAggregateInvestment = log(delta * aggregateCapital);
     logAggregateConsumption = log(exp(logAggregateOutput) - exp(logAggregateInvestment));
     logWage = log(w);
+    
+    %Save parameters back into params
+    params=NaN(M_.param_nbr,1);
+    for ii = 1:M_.param_nbr %update parameters set in the file
+      eval([ 'params(' num2str(ii) ') = ' M_.param_names{ii} ';' ])
+    end
 
     % Save endogenous variables back into ys
     for ii = 1:M_.orig_endo_nbr;
         varname = deblank(M_.endo_names(ii, :));
-        eval(['ys(' int2str(ii) ') = ' varname ';']);
+        eval(['ys(' int2str(ii) ') = ' char(varname) ';']);
     end
 
     fprintf('... Done!  Elapsed time: %2.2f seconds \n\n', toc(tStart))

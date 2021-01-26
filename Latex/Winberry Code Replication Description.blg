@@ -1,19 +1,20 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [1] Config.pm:314> INFO - Logfile is '/Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/Latex/Winberry Code Replication Description.blg'
-[150] biber-darwin:340> INFO - === Mon Jan 25, 2021, 22:09:54
-[187] Biber.pm:415> INFO - Reading '/Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/Latex/Winberry Code Replication Description.bcf'
-[474] Biber.pm:952> INFO - Found 4 citekeys in bib section 0
-[507] Biber.pm:4340> INFO - Processing section 0
-[529] Biber.pm:4531> INFO - Looking for bibtex format file 'replication_sources.bib' for section 0
-[534] bibtex.pm:1689> INFO - LaTeX decoding ...
-[559] bibtex.pm:1494> INFO - Found BibTeX data source 'replication_sources.bib'
-[629] Utils.pm:395> WARN - legacy month field 'nov' in entry 'Bayer2020' is not an integer - this will probably not sort properly.
-[638] Utils.pm:395> WARN - legacy month field 'jan' in entry 'Winberry2021' is not an integer - this will probably not sort properly.
-[663] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[663] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[663] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'level = 4' with 'level = 2'
-[663] Biber.pm:4168> INFO - Sorting list 'cms/global//global/global' of type 'entry' with template 'cms' and locale 'en-US'
-[663] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
-[681] bbl.pm:654> INFO - Writing '/Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/Latex/Winberry Code Replication Description.bbl' with encoding 'UTF-8'
-[687] bbl.pm:757> INFO - Output to /Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/Latex/Winberry Code Replication Description.bbl
-[687] Biber.pm:128> INFO - WARNINGS: 2
+[234] biber-darwin:340> INFO - === Tue Jan 26, 2021, 11:44:21
+[282] Biber.pm:415> INFO - Reading '/Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/Latex/Winberry Code Replication Description.bcf'
+[624] Biber.pm:952> INFO - Found 5 citekeys in bib section 0
+[646] Biber.pm:4340> INFO - Processing section 0
+[663] Biber.pm:4531> INFO - Looking for bibtex format file 'replication_sources.bib' for section 0
+[670] bibtex.pm:1689> INFO - LaTeX decoding ...
+[706] bibtex.pm:1494> INFO - Found BibTeX data source 'replication_sources.bib'
+[785] Utils.pm:395> WARN - legacy month field 'jan' in entry 'Young2010' is not an integer - this will probably not sort properly.
+[812] Utils.pm:395> WARN - legacy month field 'nov' in entry 'Bayer2020' is not an integer - this will probably not sort properly.
+[821] Utils.pm:395> WARN - legacy month field 'jan' in entry 'Winberry2021' is not an integer - this will probably not sort properly.
+[859] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[860] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[860] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'level = 4' with 'level = 2'
+[860] Biber.pm:4168> INFO - Sorting list 'cms/global//global/global' of type 'entry' with template 'cms' and locale 'en-US'
+[860] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[892] bbl.pm:654> INFO - Writing '/Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/Latex/Winberry Code Replication Description.bbl' with encoding 'UTF-8'
+[900] bbl.pm:757> INFO - Output to /Users/brandonkaplowitz/Documents/Documents - Comp/Graduate Classes/Year_2/Inequality/Code Replication Winberry/Latex/Winberry Code Replication Description.bbl
+[900] Biber.pm:128> INFO - WARNINGS: 3

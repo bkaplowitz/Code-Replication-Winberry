@@ -11,10 +11,16 @@ parameters beta sigma aBar aalpha delta N mu tau rhoTFP sigmaTFP;
 @#define nEconomicParameters = 10
 for iParam = 1 : @{nEconomicParameters}
     // removes any spaces from name and accesses the parameter names stored in appropriate area
-    parameterName = deblank(M_.param_names(iParam,:));
-    // returns true if parametername is attribute in the .mat file given.
-    // records the first parameter named as the object contained in the relevant .mat file
-
+    if max(dynare_version>= '4.6.0')
+        parameterNametemp = deblank(M_.param_names(iParam,:));
+        parameterName = parameterNametemp{1};
+        // returns true if parametername is attribute in the .mat file given.
+        // records the first parameter named as the object contained in the relevant .mat file
+    else
+        parameterName = deblank(M_.param_names(iParam,:));
+        // returns true if parametername is attribute in the .mat file given.
+        // records the first parameter named as the object contained in the relevant .mat file
+    end
     if isfield(economicParameters,parameterName)
         M_.params(iParam) = eval(['economicParameters.' parameterName]);
     end
@@ -46,12 +52,22 @@ parameters nEpsilon nAssets nState assetsMin assetsMax nAssetsFine nStateFine nA
 // Load in the values for each of them
 @#define nApproximationParameters = 15
 // goes through and assigns values from .mat to each of the parameters defined. Need +6 because the first 6 used as counters will have to be defined manually below. Also, starts after first 10 already defined above.
-for iParam = 1: @{nApproximationParameters}
-    parameterName = deblank(M_.param_names(@{nEconomicParameters} + 6 + iParam,:));
-    //if isfield(approximationParameters, parameterName)
-    M_.params(@{nEconomicParameters} + 6 + iParam) = eval(['approximationParameters.' parameterName]);
-    //end 
-end 
+if max(dynare_version>='4.6.0')
+    for iParam = 1: @{nApproximationParameters}
+        parameterNametemp = deblank(M_.param_names(@{nEconomicParameters} + 6 + iParam,:));
+        parameterName = parameterNametemp{1};
+        if isfield(approximationParameters, parameterName)
+            M_.params(@{nEconomicParameters} + 6 + iParam) = eval(['approximationParameters.' parameterName]);
+        end 
+    end 
+else
+    for iParam = 1: @{nApproximationParameters}
+        parameterName = deblank(M_.param_names(@{nEconomicParameters} + 6 + iParam,:));
+        if isfield(approximationParameters, parameterName)
+            M_.params(@{nEconomicParameters} + 6 + iParam) = eval(['approximationParameters.' parameterName]);
+        end 
+    end 
+end
 @#define nCounter = nEconomicParameters + 6 + nApproximationParameters
 
 // need to explicitly tell dynare each of the right values of lengths (no len() functionality built in)

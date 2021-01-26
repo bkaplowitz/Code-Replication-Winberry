@@ -1,2 +1,2 @@
 cd Dynare_Files 
- dynare dynamics_polynomials
+dynare dynamics_polynomials

@@ -1,4 +1,4 @@
-name: idp
+name: winberry-replication
 channels:
   - intel
 dependencies:
