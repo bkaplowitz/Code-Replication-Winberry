@@ -43,4 +43,3 @@ You can also run this directly from the Binder link below.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bkaplowitz/Code-Replication-Winberry/binder)
 
-
