@@ -11,8 +11,8 @@ function [ys, check] = dynamics_polynomials_steadystate(ys, exo)
     %----------------------------------------------------------------
     % Call parameters (the next set of commands will overwrite some)
     %----------------------------------------------------------------
-    load('approximationParameters')
-    load('economicParameters')
+    load('../Data/approximationParameters.mat')
+    load('../Data/economicParameters.mat')
 
     %----------------------------------------------------------------
     % Read in parameters from Dynare declaration
@@ -35,7 +35,7 @@ function [ys, check] = dynamics_polynomials_steadystate(ys, exo)
     % Steady State
     %----------------------------------------------------------------
     %displayOpt = 'off'; % 'iter-detailed' or 'off'
-    load('steadystate')
+    load('../Data/steadystate')
     % FETCH PRECOMPUTED VALUES HERE INSTEAD TO AVOID RECOMPUTING, and
     % return variable values.
     % Prices

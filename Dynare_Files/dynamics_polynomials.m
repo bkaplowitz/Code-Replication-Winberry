@@ -3207,10 +3207,10 @@ M_.maximum_exo_lead = 0;
 oo_.exo_steady_state = zeros(1, 1);
 M_.params = NaN(949, 1);
 M_.NNZDerivatives = [4447; -1; -1];
-economicParameters = load('economicParameters');
-approximationParameters = load('approximationParameters');
-grids = load('grids');
-polynomials = load('polynomials');
+economicParameters = load('../Data/economicParameters.mat');
+approximationParameters = load('../Data/approximationParameters.mat');
+grids = load('../Data/grids.mat');
+polynomials = load('../Data/polynomials.mat');
 for iParam = 1 : 10
 parameterName = deblank(M_.param_names(iParam,:));
 if isfield(economicParameters,parameterName)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.23)  25 JAN 2021 19:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.23)  25 JAN 2021 20:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -847,20 +847,20 @@ LaTeX Info: Redefining \nameref on input line 32.
 \@outlinefile=\write5
 \openout5 = `"Winberry Code Replication Description.out"'.
 
-<Figures/save_rule.png, id=68, 433.62pt x 289.08pt>
-File: Figures/save_rule.png Graphic file (type png)
-<use Figures/save_rule.png>
-Package pdftex.def Info: Figures/save_rule.png  used on input line 58.
+<../Figures/save_rule.png, id=68, 433.62pt x 289.08pt>
+File: ../Figures/save_rule.png Graphic file (type png)
+<use ../Figures/save_rule.png>
+Package pdftex.def Info: ../Figures/save_rule.png  used on input line 58.
 (pdftex.def)             Requested size: 195.1272pt x 130.0848pt.
 
 Overfull \hbox (15.1272pt too wide) in paragraph at lines 58--59
  [][] 
  []
 
-<Figures/cons_rule.png, id=70, 433.62pt x 289.08pt>
-File: Figures/cons_rule.png Graphic file (type png)
-<use Figures/cons_rule.png>
-Package pdftex.def Info: Figures/cons_rule.png  used on input line 63.
+<../Figures/cons_rule.png, id=70, 433.62pt x 289.08pt>
+File: ../Figures/cons_rule.png Graphic file (type png)
+<use ../Figures/cons_rule.png>
+Package pdftex.def Info: ../Figures/cons_rule.png  used on input line 63.
 (pdftex.def)             Requested size: 195.1272pt x 130.0848pt.
 
 Overfull \hbox (15.1272pt too wide) in paragraph at lines 63--64
@@ -873,7 +873,7 @@ Overfull \hbox (2.43333pt too wide) in paragraph at lines 56--65
  []
 
 
-LaTeX Warning: File `../../../../../../Desktop/Screen Shot 2021-01-25 at 1.18.01 PM' not found on input line 69.
+LaTeX Warning: File `\nobreakspace {}/Desktop/Screen Shot 2021-01-25 at 1.18.01 PM' not found on input line 69.
 
 
 ./Winberry Code Replication Description.tex:69: LaTeX Error: Unknown graphics extension: .01 PM.
@@ -900,20 +900,20 @@ Overfull \hbox (94.54262pt too wide) in paragraph at lines 49--73
 [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<Figures/ivar_dist_unemployed.png, id=85, 433.62pt x 289.08pt>
-File: Figures/ivar_dist_unemployed.png Graphic file (type png)
-<use Figures/ivar_dist_unemployed.png>
-Package pdftex.def Info: Figures/ivar_dist_unemployed.png  used on input line 78.
+<../Figures/ivar_dist_unemployed.png, id=85, 433.62pt x 289.08pt>
+File: ../Figures/ivar_dist_unemployed.png Graphic file (type png)
+<use ../Figures/ivar_dist_unemployed.png>
+Package pdftex.def Info: ../Figures/ivar_dist_unemployed.png  used on input line 78.
 (pdftex.def)             Requested size: 195.1272pt x 130.0848pt.
 
 Overfull \hbox (15.1272pt too wide) in paragraph at lines 78--79
  [][] 
  []
 
-<Figures/ivar_dist_employed.png, id=86, 433.62pt x 289.08pt>
-File: Figures/ivar_dist_employed.png Graphic file (type png)
-<use Figures/ivar_dist_employed.png>
-Package pdftex.def Info: Figures/ivar_dist_employed.png  used on input line 82.
+<../Figures/ivar_dist_employed.png, id=86, 433.62pt x 289.08pt>
+File: ../Figures/ivar_dist_employed.png Graphic file (type png)
+<use ../Figures/ivar_dist_employed.png>
+Package pdftex.def Info: ../Figures/ivar_dist_employed.png  used on input line 82.
 (pdftex.def)             Requested size: 195.1272pt x 130.0848pt.
 
 Overfull \hbox (15.1272pt too wide) in paragraph at lines 82--83
@@ -925,72 +925,53 @@ Overfull \hbox (2.43333pt too wide) in paragraph at lines 76--84
 []$[]$ $[]$ 
  []
 
+<../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.26.01 PM.png, id=87, 447.6725pt x 253.94875pt>
+File: ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.26.01 PM.png Graphic file (type png)
+<use ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.26.01 PM.png>
+Package pdftex.def Info: ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.26.01 PM.png  used on input line 88.
+(pdftex.def)             Requested size: 447.6714pt x 253.94812pt.
 
-LaTeX Warning: File `../../../../../../Desktop/Screen Shot 2021-01-25 at 1.26.01 PM' not found on input line 88.
+Overfull \hbox (87.6714pt too wide) in paragraph at lines 88--89
+ [][] 
+ []
 
+Package epstopdf Info: Source file: <../Figures/dynamics_polynomials_IRF_aggregateTFPShock.eps>
+(epstopdf)                    date: 2021-01-25 14:13:07
+(epstopdf)                    size: 29560 bytes
+(epstopdf)             Output file: <../Figures/dynamics_polynomials_IRF_aggregateTFPShock-eps-converted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=../Figures/dynamics_polynomials_IRF_aggregateTFPShock-eps-converted-to.pdf ../Figures/dynamics_polynomials_IRF_aggregateTFPShock.eps>
+(epstopdf)             \includegraphics on input line 99.
+runsystem(repstopdf --outfile=../Figures/dynamics_polynomials_IRF_aggregateTFPShock-eps-converted-to.pdf ../Figures/dynamics_polynomials_IRF_aggregateTFPShock.eps)...executed safely (allowed).
 
-./Winberry Code Replication Description.tex:88: LaTeX Error: Unknown graphics extension: .01 PM.
+Package epstopdf Info: Result file: <../Figures/dynamics_polynomials_IRF_aggregateTFPShock-eps-converted-to.pdf>.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.88 ...ktop/Screen Shot 2021-01-25 at 1.26.01 PM}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `./order 1.pdf' not found on input line 99.
-
-
-./Winberry Code Replication Description.tex:99: Package pdftex.def Error: File `./order 1.pdf' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.99 \includegraphics[scale=.33]{./order 1.pdf}
-                                               
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `./dynamics_polynomials_IRF_aggregateTFPShock_second_order.pdf' not found on input line 103.
-
-
-./Winberry Code Replication Description.tex:103: Package pdftex.def Error: File `./dynamics_polynomials_IRF_aggregateTFPShock_second_order.pdf' not found: using draft setting.
+./Winberry Code Replication Description.tex:99: Package pdftex.def Error: File `../Figures/dynamics_polynomials_IRF_aggregateTFPShock-eps-converted-to.pdf' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.103 ...s_IRF_aggregateTFPShock_second_order.pdf}
+l.99 ...ynamics_polynomials_IRF_aggregateTFPShock}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+<../Figures/dynamics_polynomials_IRF_aggregateTFPShock_second_order.pdf, id=91, 471.7625pt x 368.37625pt>
+File: ../Figures/dynamics_polynomials_IRF_aggregateTFPShock_second_order.pdf Graphic file (type pdf)
+<use ../Figures/dynamics_polynomials_IRF_aggregateTFPShock_second_order.pdf>
+Package pdftex.def Info: ../Figures/dynamics_polynomials_IRF_aggregateTFPShock_second_order.pdf  used on input line 103.
+(pdftex.def)             Requested size: 167.47325pt x 130.77167pt.
 
 Overfull \hbox (2.43333pt too wide) in paragraph at lines 97--105
 []$[]$ $[]$ 
  []
 
-
-LaTeX Warning: File `../../../../../../Desktop/Screen Shot 2021-01-25 at 1.25.48 PM' not found on input line 109.
-
-
-./Winberry Code Replication Description.tex:109: LaTeX Error: Unknown graphics extension: .48 PM.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.109 ...top/Screen Shot 2021-01-25 at 1.25.48 PM}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[2] [3 <./Figures/save_rule.png> <./Figures/cons_rule.png> <./Figures/ivar_dist_unemployed.png> <./Figures/ivar_dist_employed.png>] [4] [5] [6]
+<../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.25.48 PM.png, id=92, 474.77374pt x 441.65pt>
+File: ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.25.48 PM.png Graphic file (type png)
+<use ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.25.48 PM.png>
+Package pdftex.def Info: ../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.25.48 PM.png  used on input line 109.
+(pdftex.def)             Requested size: 189.90613pt x 176.65686pt.
+[2] [3 <../Figures/save_rule.png> <../Figures/cons_rule.png>] [4 <../Figures/ivar_dist_unemployed.png> <../Figures/ivar_dist_employed.png> <../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.26.01 PM.png>] [5 <../Figures/dynamics_polynomials_IRF_aggregateTFPShock_second_order.pdf> <../../../../../../../Desktop/Screen Shot 2021-01-25 at 1.25.48 PM.png>] [6] [7]
 Overfull \hbox (14.44429pt too wide) in paragraph at lines 160--160
 [][]\OT1/cmr/m/n/10.95 Schmitt-Grohe, Stephanie, Mart^^S^^Pn Uribe, Stephanie Schmitt-Grohe, and Mart^^S^^Pn
  []
@@ -1000,7 +981,7 @@ Overfull \hbox (7.11377pt too wide) in paragraph at lines 160--160
 \OT1/cmr/m/n/10.95 Uribe. 2004. ``Solv-ing dy-namic gen-eral equi-lib-rium mod-els us-ing a second-
  []
 
-[7] (./Winberry Code Replication Description.aux)
+[8] (./Winberry Code Replication Description.aux)
 Package rerunfilecheck Info: File `"Winberry Code Replication Description".out' has not changed.
 (rerunfilecheck)             Checksum: 200ECCCC4853A82E10CEE7053407BC71;472.
 Package logreq Info: Writing requests to '"Winberry Code Replication Description".run.xml'.
@@ -1008,18 +989,18 @@ Package logreq Info: Writing requests to '"Winberry Code Replication Description
 
  ) 
 Here is how much of TeX's memory you used:
- 28829 strings out of 479304
- 564702 string characters out of 5867281
- 1605597 words of memory out of 5000000
- 45494 multiletter control sequences out of 15000+600000
+ 28803 strings out of 479304
+ 564155 string characters out of 5867281
+ 1607597 words of memory out of 5000000
+ 45468 multiletter control sequences out of 15000+600000
  412388 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,11n,130p,1290b,3901s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on "Winberry Code Replication Description.pdf" (7 pages, 2589422 bytes).
+Output written on "Winberry Code Replication Description.pdf" (8 pages, 2674120 bytes).
 PDF statistics:
- 240 PDF objects out of 1000 (max. 8388607)
- 188 compressed objects within 2 object streams
- 49 named destinations out of 1000 (max. 500000)
- 193 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 255 PDF objects out of 1000 (max. 8388607)
+ 197 compressed objects within 2 object streams
+ 50 named destinations out of 1000 (max. 500000)
+ 208 words of extra memory for PDF output out of 10000 (max. 10000000)
 

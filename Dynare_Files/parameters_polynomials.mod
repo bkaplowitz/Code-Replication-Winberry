@@ -1,10 +1,10 @@
 // From Winberry, 2018
 // Loads in each of the .mat data structs containing the parameters of interest
-economicParameters = load('./Data/economicParameters');
-approximationParameters = load('./Data/approximationParameters');
-grids = load('./Data/grids');
-polynomials = load('./Data/polynomials');
 
+economicParameters = load('../Data/economicParameters.mat');
+approximationParameters = load('../Data/approximationParameters.mat');
+grids = load('../Data/grids.mat');
+polynomials = load('../Data/polynomials.mat');
 // Define the economic parameters
 parameters beta sigma aBar aalpha delta N mu tau rhoTFP sigmaTFP;
 // Load each of their values 

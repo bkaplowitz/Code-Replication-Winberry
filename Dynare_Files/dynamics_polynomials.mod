@@ -1,7 +1,7 @@
 // First Order Dynamics
 // Based on Winberry, 2018
     //Load parameters //
-@#include ".parameters_polynomials.mod"
+@#include "parameters_polynomials.mod"
     // Variable Definition //
 // loads variables stored here
 @#include "variables_polynomials.mod"
