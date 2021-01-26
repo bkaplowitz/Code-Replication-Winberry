@@ -1,0 +1,9 @@
+name: idp
+channels:
+  - intel
+  - conda-forge
+dependencies:
+  - numpy
+  - scipy
+  - icecream
+  - matplotlib
