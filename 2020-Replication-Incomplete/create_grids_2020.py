@@ -130,7 +130,7 @@ def scaleup(x, minval, maxval):
     """
     Converts [-1,1] to [minval,maxval] range with points always lying inside new range. Returns scaled up version of values.
     """
-    scaled = np.min(
+    return np.min(
         (
             np.max(
                 (
@@ -141,7 +141,6 @@ def scaleup(x, minval, maxval):
             maxval * np.ones(np.len(x)),
         )
     )
-    return scaled
 
 
 # @njit
@@ -149,13 +148,17 @@ def scaledown(x, minval, maxval):
     """
     Converts [minval,maxval] to [-1,1] with points always lying inside [-1,1]. Returns scaled down values.
     """
-    scaled = np.min(
+    return np.min(
         (
-            np.max((2 * (x - minval) / (maxval - minval) - 1, -1 * np.ones(np.len(x)))),
+            np.max(
+                (
+                    2 * (x - minval) / (maxval - minval) - 1,
+                    -1 * np.ones(np.len(x)),
+                )
+            ),
             np.ones(np.len(x)),
         )
     )
-    return scaled
 
 
 def tauchen_prod_compute(prod_grid_fine, prod_step_size, rho, sigma_prod):
@@ -169,10 +172,9 @@ def tauchen_prod_compute(prod_grid_fine, prod_step_size, rho, sigma_prod):
         - 0.5 * prod_step_size * np.ones(len(prod_grid_fine))
         - rho * np.tile(prod_grid_fine, len(prod_grid_fine))
     )
-    prod_trans = norm.cdf(prod_right_step_grid, 0, sigma_prod) - norm.cdf(
+    return norm.cdf(prod_right_step_grid, 0, sigma_prod) - norm.cdf(
         prod_left_step_grid, 0, sigma_prod
     )
-    return prod_trans
 
 
 def cheby_nodes_compute(

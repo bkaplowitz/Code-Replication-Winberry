@@ -164,9 +164,7 @@ def compute_MC_Residual_Histogram(
             (hist_mat[0, :] + hist_mat[1, :]),
         )
     )
-    # return [residual, hist_mat, assets_prime_fine, con_fine]
-    return_val = np.array([residual, hist_mat, assets_prime_fine, con_fine])
-    return return_val
+    return np.array([residual, hist_mat, assets_prime_fine, con_fine])
 
 
 def compute_linear_weights(grid, vals, n_epsilon):
@@ -306,9 +304,9 @@ def update_coefs_poly(
     #    cond_expec_mat[i_epsilon,:] = cond_expec_est[i_epsilon,i_epsilon,:]
     cond_expec_mat = np.einsum("ii...->i...", cond_expec_est)
 
-    coefs_new = compute_coefficients(assets_poly, n_epsilon, n_assets, assets_poly_sq, cond_expec_mat)
-
-    return coefs_new
+    return compute_coefficients(
+        assets_poly, n_epsilon, n_assets, assets_poly_sq, cond_expec_mat
+    )
 
 @njit
 def compute_coefficients(assets_poly, n_epsilon, n_assets, assets_poly_sq, cond_expec_mat):

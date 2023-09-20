@@ -49,13 +49,13 @@ def compute_MC_residual_poly(
     w = capital ** alpha * (1 - alpha) * (N ** (-alpha))
 
     # sets different default options depending on use case
-    if Fast == True:
-        err_2 = 1e-4
-        tol_2 = 200
-    elif Fast == False:
+    if Fast == False:
         err_2 = 1e-6
         tol_2 = 500
 
+    elif Fast == True:
+        err_2 = 1e-4
+        tol_2 = 200
     # approximate cond expectation function
 
     # initial coefs using rule of thumb savings-- assumes dV'(a')=a' and then FOC. Log used in exp transform in update coefficients to ensure it is positive. Assumes marginal value next period is linear in savings.  From FOC can be seen as FOC consuming annuity value of capital and keeping stock constant.
@@ -106,7 +106,7 @@ def compute_MC_residual_poly(
     coefs = coefs_mat.copy()
 
     # compute EMUC over quadrature grid for integration later on
-    
+
     assets_prime_quad, assets_prime_BC = assets_prime_grids(epsilon_grid, epsilon_grid_quad, n_epsilon, n_assets_quad, assets_min, assets_poly_BC, assets_poly_quad, assets_grid_quad, a_bar, mu, sigma, tau, r, w, coefs)
 
     # compute stationary distribution from decision rules
@@ -205,8 +205,7 @@ def compute_MC_residual_poly(
     residual = capital - capital_new
     residual_return = residual.flatten()
     params_opt = params_new
-    return_val = np.array([residual_return, coefs, params_opt, moments, constrained])
-    return return_val
+    return np.array([residual_return, coefs, params_opt, moments, constrained])
 
 @njit
 def assets_prime_grids(epsilon_grid, epsilon_grid_quad, n_epsilon, n_assets_quad, assets_min, assets_poly_BC, assets_poly_quad, assets_grid_quad, a_bar, mu, sigma, tau, r, w, coefs):
@@ -275,12 +274,11 @@ def compute_capital(moments, constrained, n_epsilon, epsilon_invariant, a_bar):
     '''
     Given moments and percentage constrained aggregates to get new capital
     '''
-    capital_new = np.multiply(epsilon_invariant, (1 - constrained)).T @ moments[
+    return np.multiply(epsilon_invariant, (1 - constrained)).T @ moments[
         :, 0:1
     ] + a_bar * (np.multiply(epsilon_invariant, constrained)).T @ np.ones(
         (n_epsilon, 1)
     )
-    return capital_new
 
 #@njit
 def compute_moments(
@@ -334,9 +332,7 @@ def compute_moments(
                 * assets_prime_BC[i_epsilon, 0]
             )
         # rescaling by epsilon invariant to rescale to conditional on shock realization moment (which is what we want to use)
-        moments_new[i_epsilon_prime, 0] = (
-            moments_new[i_epsilon_prime, 0] / epsilon_invariant[i_epsilon_prime]
-        )
+        moments_new[i_epsilon_prime, 0] /= epsilon_invariant[i_epsilon_prime]
         # new grids for the moments computed by subtracting moments from assets (as before)
         grid_moments_new[i_epsilon_prime, :, 0] = (
             assets_grid_quad - moments_new[i_epsilon_prime, 0]
@@ -383,10 +379,7 @@ def compute_moments(
                     )
                 )
             # renormalize
-            moments_new[i_epsilon_prime, i_moments] = (
-                moments_new[i_epsilon_prime, i_moments]
-                / epsilon_invariant[i_epsilon_prime]
-            )
+            moments_new[i_epsilon_prime, i_moments] /= epsilon_invariant[i_epsilon_prime]
             # compute new grid of moments for updating estimate of density, centered
             grid_moments_new[i_epsilon_prime, :, i_moments] = (
                 assets_grid_quad.T - moments_new[i_epsilon_prime, 0]
@@ -418,5 +411,4 @@ def deriv_exp_func(params, grid_moments, quad_weights, n_measure):
         ),
         0,
     )
-    jac = deriv.T
-    return jac
+    return deriv.T

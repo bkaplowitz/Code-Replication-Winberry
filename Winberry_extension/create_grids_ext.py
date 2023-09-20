@@ -83,24 +83,25 @@ def scaleup(x, minval: float, maxval: float):
     """
     Converts [-1,1] to [minval,maxval] range with points always lying inside new range. Returns scaled up version of values.
     """
-    scaled = np.minimum(
+    return np.minimum(
         np.maximum(
-            0.5 * (x + 1) * (maxval - minval) + minval, minval * np.ones(np.shape(x))
+            0.5 * (x + 1) * (maxval - minval) + minval,
+            minval * np.ones(np.shape(x)),
         ),
         maxval * np.ones(np.shape(x)),
     )
-    return scaled
 
 @njit
 def scaledown(x, minval, maxval):
     """
     Converts [minval,maxval] to [-1,1] with points always lying inside [-1,1]. Returns scaled down values.
     """
-    scaled = np.minimum(
-        np.maximum(2 * (x - minval) / (maxval - minval) - 1, -1 * np.ones(np.shape(x))),
+    return np.minimum(
+        np.maximum(
+            2 * (x - minval) / (maxval - minval) - 1, -1 * np.ones(np.shape(x))
+        ),
         np.ones(np.shape(x)),
     )
-    return scaled
 @njit
 def tile_h(x,n_dim):
     return x.repeat(n_dim).reshape((-1,n_dim), order='F')
